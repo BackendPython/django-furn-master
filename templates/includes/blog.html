@@ -1,0 +1,32 @@
+{% load static %}
+<section id="blog" class="blog">
+    <div class="container">
+        <div class="section-header">
+            <h2>latest blog</h2>
+        </div>
+        <!--/.section-header-->
+        <div class="blog-content">
+            <div class="row">
+                {% for y in blog %}
+                <div class="col-sm-4">
+                    <div class="single-blog">
+                        <div class="single-blog-img">
+                            <img src="{{ y.img.url }}" alt="blog image" style="width: 400px;" >
+                            <div class="single-blog-img-overlay"></div>
+                        </div>
+                        <div class="single-blog-txt">
+                            <h2><a href="{{ y.title_url }}">{{ y.title }}</a></h2>
+                            <h3>{{ y.date }}</h3>
+                            <p>
+                               {{ y.aboute }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--/.container-->
+
+</section>

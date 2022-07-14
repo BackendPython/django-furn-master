@@ -1,0 +1,128 @@
+{% load static %}
+
+
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--/.carousel-indicator -->
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel" data-slide-to="0" class="active"><span class="small-circle"></span>
+            </li>
+            <li data-target="#header-carousel" data-slide-to="1"><span class="small-circle"></span></li>
+            <li data-target="#header-carousel" data-slide-to="2"><span class="small-circle"></span></li>
+            <li data-target="#header-carousel" data-slide-to="3"><span class="small-circle"></span></li>
+        </ol><!-- /ol-->
+        <!--/.carousel-indicator -->
+
+        <!--/.carousel-inner -->
+        <div class="carousel-inner" role="listbox">
+            <!-- .item -->
+            <div class="item active">
+                <div class="single-slide-item slide1">
+                    <div class="container">
+                        <div class="welcome-hero-content">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="single-welcome-hero">
+                                        <div class="welcome-hero-txt">
+                                            <h4>Great Design Collection</h4>
+                                            <h2>Valvet Accent Arm Chair</h2>
+                                            <p>
+                                                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiuiana Smod Tempor Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip.
+                                            </p>
+                                            <div class="packages-price">
+                                                <p>
+                                                    $ 465
+                                                    <del>$ 565</del>
+                                                </p>
+                                            </div>
+                                            <button class="btn-cart welcome-add-cart"
+                                                onclick="window.location.href='#'">
+                                                <span class="lnr lnr-plus-circle"></span>
+                                                add <span>to</span> cart
+                                            </button>
+                                            <button class="btn-cart welcome-add-cart welcome-more-info"
+                                                onclick="window.location.href='#'">
+                                                more info
+                                            </button>
+                                        </div>
+                                        <!--/.welcome-hero-txt-->
+                                    </div>
+                                    <!--/.single-welcome-hero-->
+                                </div>
+                                <!--/.col-->
+                                <div class="col-sm-5">
+                                    <div class="single-welcome-hero">
+                                        <div class="welcome-hero-img">
+                                            <img src="{% static 'images/slider/slider1.png' %}" alt="slider image" width="500">
+                                        </div>
+                                        <!--/.welcome-hero-txt-->
+                                    </div>
+                                    <!--/.single-welcome-hero-->
+                                </div>
+                                <!--/.col-->
+                            </div>
+                            <!--/.row-->
+                        </div>
+                        <!--/.welcome-hero-content-->
+                    </div><!-- /.container-->
+                </div><!-- /.single-slide-item-->
+
+            </div><!-- /.item .active-->
+             {% for y in base %}
+            <div class="item">
+                <div class="single-slide-item slide1">
+                    <div class="container">
+                        <div class="welcome-hero-content">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="single-welcome-hero">
+                                        <div class="welcome-hero-txt">
+                                            <h4>{{ y.slider_title }}</h4>
+                                            <h2>{{ y.title }}</h2>
+                                            <p>
+                                               {{ y.aboute }}
+                                            </p>
+                                            <div class="packages-price">
+                                                <p>
+                                                    $ {{ y.price }}
+                                                    <del>$ {{ y.old_price }}</del>
+                                                </p>
+                                            </div>
+                                            <button class="btn-cart welcome-add-cart"
+                                                onclick="window.location.href='#'">
+                                                <span class="lnr lnr-plus-circle"></span>
+                                                add <span>to</span> cart
+                                            </button>
+                                            <button class="btn-cart welcome-add-cart welcome-more-info"
+                                                onclick="window.location.href='#'">
+                                                more info
+                                            </button>
+                                        </div>
+                                        <!--/.welcome-hero-txt-->
+                                    </div>
+                                    <!--/.single-welcome-hero-->
+                                </div>
+                                <!--/.col-->
+                                <div class="col-sm-5">
+                                    <div class="single-welcome-hero">
+                                        <div class="welcome-hero-img">
+                                            <img src="{{ y.img.url }}" alt="slider image" width="500">
+                                        </div>
+                                        <!--/.welcome-hero-txt-->
+                                    </div>
+                                    <!--/.single-welcome-hero-->
+                                </div>
+                                <!--/.col-->
+                            </div>
+                            <!--/.row-->
+                        </div>
+                        <!--/.welcome-hero-content-->
+                    </div><!-- /.container-->
+                </div><!-- /.single-slide-item-->
+
+            </div><!-- /.item .active-->
+            {% endfor %}
+
+        </div><!-- /.carousel-inner-->
+
+    </div>
+

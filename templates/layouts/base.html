@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base - {% block title %}{% endblock title %}</title>
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+        rel="stylesheet">
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'logo/favicon.png' %}" />
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="{% static 'css/bootsnav.css' %}">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+
+<body>
+
+
+
+        {% include 'includes/navigation.html' %}
+            {% block content %}
+
+            {% endblock content %}
+        {% include 'includes/footer.html' %}
+
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js "></script>
+
+    <!--bootstrap.min.js-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- bootsnav js -->
+    <script src="{% static 'js/bootsnav.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!--owl.carousel.js-->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+    <!--Custom JS-->
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
