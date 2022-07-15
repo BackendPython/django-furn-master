@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 from  django.contrib.auth.models import AbstractUser
 
@@ -21,15 +22,16 @@ class Arrival(models.Model):
     arrivals_title = models.CharField(max_length=200)
     arrivals_url = models.URLField(max_length=500)
     arrivals_price = models.IntegerField(default=10)
+    category = models.ForeignKey("Category", blank=True, on_delete=models.CASCADE)
     def __str__(self):
         return self.arrivals_title
 
 class Blog(models.Model):
     img = models.ImageField()
-    title = models.CharField(max_length=200)
-    title_url = models.URLField(max_length=500)
     date = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     aboute = models.TextField(max_length=700)
+    title_url = models.URLField(max_length=500)
 
     def __str__(self):
         return self.title
@@ -49,3 +51,13 @@ class Subscribe(models.Model):
 
     def __str__(self):
         return self.email
+    
+class Category(models.Model):
+    class Meta:
+        verbose_name = 'My Category'
+        verbose_name_plural = 'My Categorys bob'
+        
+    category_name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.category_name

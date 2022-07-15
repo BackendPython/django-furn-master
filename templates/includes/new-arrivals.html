@@ -1,10 +1,25 @@
 {% load static %}
 
 
+
+<style>
+    .links{
+        border: 1px solid aqua !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        /* padding: 10px 15px !important; */
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+</style>
 <section id="new-arrivals" class="new-arrivals">
     <div class="container">
         <div class="section-header">
             <h2>new arrivals</h2>
+            <a class="links" href="{% url 'furn:home' %}">All</a>
+            {% for category in categories %}
+            <a class="links" href="{% url 'furn:home' %}?category={{ category.category_name }}">{{ category.category_name }}</a>
+            {% endfor %}
         </div>
         <!--/.section-header-->
         <div class="new-arrivals-content">
@@ -26,7 +41,7 @@
                                 </p>
                             </div>
                         </div>
-                        <h4><a href="{{ y.arrivals_url }}">{{ y.arrivals_title }}</a></h4>
+                        <h4><a href="#">{{ y.arrivals_title }}</a></h4> 
                         <p class="arrival-product-price">${{ y.arrivals_price }}</p>
                     </div>
                 </div>
