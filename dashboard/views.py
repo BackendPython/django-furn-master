@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 
 def dashboard_home(request):
     return render(request, 'dashboard/pages/home.html')
@@ -41,3 +42,7 @@ def page_404(request):
 
 def blank(request):
     return render(request, 'dashboard/includes/blank.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')

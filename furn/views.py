@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 from furn.models import *
 
 def home(request):
@@ -22,9 +23,11 @@ def home(request):
         })
     
 def arrivals_detail(request, pk):
+    
     arrivals_details = Arrival.objects.get(id=pk)
     
     context = {
         "arrivals_details": arrivals_details,
     }
     return render(request, 'details/arrival_detail.html', context)
+
