@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from furn.models import *
-from furn.form import Followers
 
 def home(request):
 
@@ -21,3 +20,11 @@ def home(request):
          "products":products,
          "categories":categories,
         })
+    
+def arrivals_detail(request, pk):
+    arrivals_details = Arrival.objects.get(id=pk)
+    
+    context = {
+        "arrivals_details": arrivals_details,
+    }
+    return render(request, 'details/arrival_detail.html', context)

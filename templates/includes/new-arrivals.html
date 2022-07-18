@@ -41,7 +41,7 @@
                                 </p>
                             </div>
                         </div>
-                        <h4><a href="#">{{ y.arrivals_title }}</a></h4> 
+                        <h4><a href="{% url 'furn:arrival_detail' y.pk %}">{{ y.arrivals_title }}</a></h4>
                         <p class="arrival-product-price">${{ y.arrivals_price }}</p>
                     </div>
                 </div>

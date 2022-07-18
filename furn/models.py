@@ -23,6 +23,12 @@ class Arrival(models.Model):
     arrivals_url = models.URLField(max_length=500)
     arrivals_price = models.IntegerField(default=10)
     category = models.ForeignKey("Category", blank=True, on_delete=models.CASCADE)
+    
+    # for information
+    
+    arrvals_size = models.CharField(max_length=30)
+    arrivals_text = models.CharField(max_length=200)
+    
     def __str__(self):
         return self.arrivals_title
 
