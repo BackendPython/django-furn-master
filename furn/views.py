@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
+from django.views import generic
 from furn.models import *
+from furn.form import *
 
 def home(request):
 
@@ -30,4 +31,12 @@ def arrivals_detail(request, pk):
         "arrivals_details": arrivals_details,
     }
     return render(request, 'details/arrival_detail.html', context)
+
+class Registration(generic.CreateView):
+    template_name = 'registration/signup.html'
+    form_class = Register
+    
+    def get_success_url(self):
+        return redirect('furn:home')
+
 

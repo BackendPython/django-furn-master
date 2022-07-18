@@ -113,9 +113,9 @@
                         <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="active"><a href="{% url 'furn:home' %}">home</a></li>
                             <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
-                            <li class="scroll"><a href="#feature">features</a></li>
-                            <li class="scroll"><a href="#blog">blog</a></li>
                             <li class="scroll"><a href="#newsletter">contact</a></li>
+                            <li class=""><a href="{% url 'furn:signup' %}">Register</a></li>
+                            <li class="scroll"><a href="#blog">Login</a></li>
                             {% if request.user.is_organiser %}
                             <li class=""><a href="/dashboard/">dashboard</a></li>
                             {% endif %}
