@@ -42,7 +42,3 @@ def page_404(request):
 
 def blank(request):
     return render(request, 'dashboard/includes/blank.html')
-
-def logout_user(request):
-    logout(request)
-    return redirect('/')
