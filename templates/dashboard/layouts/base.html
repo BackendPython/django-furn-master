@@ -330,7 +330,7 @@
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Not organiser</span>
                                     {% endif %}
                                     <img class="img-profile rounded-circle"
-                                        src="{% static 'images/undraw_profile.svg' %}">
+                                        src="{{ request.user.user_image.url }}">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -348,7 +348,7 @@
                                         Activity Log
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <a class="dropdown-item" href="{% url 'furn:home' %}admin/logout/">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Logout
                                     </a>
