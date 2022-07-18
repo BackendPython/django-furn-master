@@ -102,7 +102,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="index.html">sine<span>mkt</span>.</a>
+                        <a class="navbar-brand" href="{% url 'furn:home' %}">sine<span>mkt</span>.</a>
 
                     </div>
                     <!--/.navbar-header-->
@@ -111,7 +111,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" scroll active"><a href="#home">home</a></li>
+                            <li class="active"><a href="{% url 'furn:home' %}">home</a></li>
                             <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
                             <li class="scroll"><a href="#feature">features</a></li>
                             <li class="scroll"><a href="#blog">blog</a></li>
