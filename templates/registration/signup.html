@@ -1,10 +1,13 @@
 {% extends 'layouts/base.html' %}
 
+
+
 {% block content %}
 
-<form method="post">
+<form method="post" style="margin-top: 200px;margin-left: 30%;">
     {% csrf_token %}
     {{ form }}
+    <button type="submit">Submit</button>
 </form>
 
 {% endblock %}
