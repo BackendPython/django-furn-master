@@ -32,11 +32,21 @@ def arrivals_detail(request, pk):
     }
     return render(request, 'details/arrival_detail.html', context)
 
-class Registration(generic.CreateView):
-    template_name = 'registration/signup.html'
-    form_class = Register
+
+
+
+
+
+
+
+
+
+
+# class Registration(generic.CreateView):
+#     template_name = 'registration/signup.html'
+#     form_class = Register
     
-    def get_success_url(self):
-        return redirect('furn:home')
+#     def get_success_url(self):
+#         return redirect('furn:home')
 
 
