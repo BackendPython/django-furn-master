@@ -34,7 +34,7 @@ def arrivals_detail(request, pk):
 
 
 def signup(request):
-    if request.Method == 'POST':
+    if request.method == 'POST':
         form = Registertration(request.POST)
         if form.is_valid():
             form.save()
