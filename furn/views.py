@@ -34,7 +34,7 @@ def arrivals_detail(request, pk):
 
 class SignUp(generic.CreateView):
     template_name = 'registration/signup.html'
-    form_class = Registertration
+    form_class = Registration
     def get_success_url(self):
         return reverse('furn:home')
 

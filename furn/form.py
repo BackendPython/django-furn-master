@@ -47,7 +47,7 @@ class RegistertrationDetails(UserCreationForm):
         })
     )
 
-class Regsitration(UserCreationForm):
+class Registration(UserCreationForm):
     model = RegistertrationDetails
     fields = (
         "first_name",
