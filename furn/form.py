@@ -11,7 +11,7 @@ class Registertration(UserCreationForm):
         required = True,
         widget = forms.TextInput(attrs={
             "class" : "form-control",
-            "placeholder" : "Familiyangizni kiriting"
+            "placeholder" : "Ismingizni kiriting"
         })
     )
     last_name = forms.CharField(
@@ -27,7 +27,7 @@ class Registertration(UserCreationForm):
         required = True,
         widget = forms.TextInput(attrs={
             "class" : "form-control",
-            "placeholder" : "Familiyangizni kiriting"
+            "placeholder" : "Emailni kiriting"
         })
     )
 
