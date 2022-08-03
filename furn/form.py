@@ -8,6 +8,6 @@ User = get_user_model()
 class Registertration(UserCreationForm):
     class Meta:
         model = User
-        fields = ("username"),
+        fields = ("username", )
         field_classes = {"username": UsernameField}
 
