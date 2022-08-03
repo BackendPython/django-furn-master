@@ -5,7 +5,7 @@ from django import forms
 
 User = get_user_model()
 
-class RegistertrationDetails(UserCreationForm):
+class Registertration(UserCreationForm):
     first_name = forms.CharField(
         max_length=100,
         required = True,
@@ -47,14 +47,14 @@ class RegistertrationDetails(UserCreationForm):
         })
     )
 
-class Registration(UserCreationForm):
-    model = RegistertrationDetails
-    fields = (
-        "first_name",
-        "last_name",
-        "email",
-        "password1",
-        "password2"
-    )
+    class Meta:
+        model = User
+        fields = (
+            "first_name",
+            "last_name",
+            "email",
+            "password1",
+            "password2"
+        )
 
 
