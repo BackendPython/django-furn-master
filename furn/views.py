@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from furn.models import *
 from furn.form import *
@@ -32,8 +32,11 @@ def arrivals_detail(request, pk):
     }
     return render(request, 'details/arrival_detail.html', context)
 
-
-
+class SignUp(generic.CreateView):
+    template_name = 'registration/signup.html'
+    form_class = Registertration
+    def get_success_url(self):
+        return reverse('furn:home')
 
 
 
