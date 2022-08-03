@@ -32,24 +32,25 @@ def arrivals_detail(request, pk):
     }
     return render(request, 'details/arrival_detail.html', context)
 
-class SignUp(generic.CreateView):
-    template_name = 'registration/signup.html'
-    form_class = Registertration
-    def get_success_url(self):
-        return reverse('furn:home')
 
-
-
-
-
-
-
-
-# class Registration(generic.CreateView):
+def signup(request):
+    if request.Method == 'POST':
+        form = Registertration(request.POST)
+        if form.is_valid():
+            form.save()
+            return reverse('furn:home')
+    else:
+        form = Registertration()
+        
+    return render(request, 'registration/signup.html')
+# class SignUp(generic.CreateView):
 #     template_name = 'registration/signup.html'
-#     form_class = Register
-    
+#     form_class = Registertration
 #     def get_success_url(self):
-#         return redirect('furn:home')
+#         return reverse('furn:home')
+
+
+
+
 
 
