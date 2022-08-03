@@ -5,6 +5,6 @@ app_name = 'furn'
 
 urlpatterns = [
     path('', home, name="home"),
-    path('signup', SignUp.as_view(), name='signup'),
+    path('signup', signup, name='signup'),
     path('<int:pk>/details/', arrivals_detail, name='arrival_detail'),
 ]
