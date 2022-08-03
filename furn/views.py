@@ -42,7 +42,7 @@ def signup(request):
     else:
         form = Registertration()
         
-    return render(request, 'registration/signup.html')
+    return render(request, 'registration/signup.html', {"form":form})
 # class SignUp(generic.CreateView):
 #     template_name = 'registration/signup.html'
 #     form_class = Registertration
