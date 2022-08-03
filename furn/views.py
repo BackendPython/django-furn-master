@@ -35,12 +35,12 @@ def arrivals_detail(request, pk):
 
 def signup(request):
     if request.method == 'POST':
-        form = Registertration(request.POST)
+        form = Registration(request.POST)
         if form.is_valid():
             form.save()
             return reverse('furn:home')
     else:
-        form = Registertration()
+        form = Registration()
         
     return render(request, 'registration/signup.html', {"form":form})
 # class SignUp(generic.CreateView):
