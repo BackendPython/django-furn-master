@@ -38,7 +38,7 @@ def signup(request):
         form = Registration(request.POST)
         if form.is_valid():
             form.save()
-            return reverse('furn:home')
+        return reverse('furn:home')
     else:
         form = Registration()
         

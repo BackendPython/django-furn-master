@@ -7,14 +7,14 @@ from django import forms
 User = get_user_model()
 
 
-class Registration(UserCreationForm):
+class Registration(forms.ModelForm):
     class Meta:
         model = MyUser
-        fields = [
+        fields = (
             "first_name",
             "last_name",
             "email",
-        ]
+        )
 
 # class Registertration(UserCreationForm):
 #     first_name = forms.CharField(
