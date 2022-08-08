@@ -32,7 +32,6 @@ def arrivals_detail(request, pk):
     }
     return render(request, 'details/arrival_detail.html', context)
 
-
 def signup(request):
     if request.method == 'POST':
         form = Registration(request.POST)
@@ -43,12 +42,9 @@ def signup(request):
         form = Registration()
         
     return render(request, 'registration/signup.html', {"form":form})
-# class SignUp(generic.CreateView):
-#     template_name = 'registration/signup.html'
-#     form_class = Registertration
-#     def get_success_url(self):
-#         return reverse('furn:home')
 
+def logout_redirect(request):
+    return render(request, 'registration/logout-redirect.html')
 
 
 
