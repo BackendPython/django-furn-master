@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Base - Logout</title>
 </head>
 <body>
     
-  <a href="{% url 'furn:signup' %}">
+  <a>
     <header class="top-header">
   </header>
   
@@ -40,17 +41,15 @@
       <div class="error__message message">
         <h1 class="message__title">You are logout</h1>
         <p class="message__text">We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again, or take a look at our.</p>
+        <a class="home-btn btn text-darken border border-primary bg-primary" style="opacity: 0.3;" href="{% url 'furn:home' %}">Home</a>
       </div>
     </div>
     <!-- END Content -->
-  
   </section>
   
     </a>
 
     <style>
-      
-@charset "UTF-8";
 
 /***********************************
 			/* 1. BODY */
@@ -86,6 +85,11 @@ a {
   background: transparent;
   text-decoration: none;
   color: #000;
+}
+
+.home-btn{
+  font-size: 50px !important;
+
 }
 
 input, select, button, textarea {
