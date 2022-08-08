@@ -114,10 +114,15 @@
                             <li class="active"><a href="{% url 'furn:home' %}">home</a></li>
                             <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
                             <li class="scroll"><a href="#newsletter">contact</a></li>
+                            {% if not request.user.is_authenticated %}
                             <li class=""><a href="{% url 'furn:signup' %}">Register</a></li>
-                            <li class="scroll"><a href="#blog">Login</a></li>
+                            <li class=""><a href="#">Login</a></li>
+                            {% endif %}
                             {% if request.user.is_organiser %}
                             <li class=""><a href="/dashboard/">dashboard</a></li>
+                            {% endif %}
+                            {% if request.user.is_authenticated %}
+                            <li class=""><a href="{% url 'furn:home' %}admin/logout">Logout</a></li>
                             {% endif %}
                         </ul>
                         <!--/.nav -->
