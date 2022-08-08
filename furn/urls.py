@@ -8,5 +8,6 @@ urlpatterns = [
     path('', home, name="home"),
     path('signup/', signup, name='signup'),
     path('login/', LoginView.as_view(), name='login'),
+    path('logout/', logout_redirect, name='logout-redirect'),
     path('<int:pk>/details/', arrivals_detail, name='arrival_detail',),
 ]
