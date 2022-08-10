@@ -122,8 +122,7 @@
                             <li class=""><a href="/dashboard/">dashboard</a></li>
                             {% endif %}
                             {% if request.user.is_authenticated %}
-                            <li class="scroll"><a href="#">{{ request.user.username }}</a></li>
-                            <li><a href="{% url 'furn:home' %}admin/logout">Logout</a></li>
+                            <li><a href="{% url 'furn:logout' %}">Logout</a></li>
                             {% endif %}
                         </ul>
                         <!--/.nav -->
