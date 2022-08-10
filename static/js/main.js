@@ -1,14 +1,24 @@
 let logout_button = document.querySelector('.logout-navbar')
 let block_content = document.querySelector('.block-content')
 let logout_coniform = document.querySelector('.logout-coniform')
-console.log(logout_coniform);
+let openModal = false
 
 logout_button.addEventListener('click', function(){
-    logout_coniform.ariaPressed = true
-    logout_coniform.ariaSelected = true
+    setTimeout(() => {
+        openModal = true
+        document.body.style.overflow = 'hidden'
+    }, 100);
     logout_coniform.style.display = 'block'
     block_content.style.opacity = '0.3'
+    block_content.addEventListener('click', function(){
+        if (openModal==true) {
+            openModal = false
+            logout_coniform.style.display = 'none'
+            block_content.style.opacity = '1'
+            document.body.style.overflow = 'scroll'
+        }
+        setTimeout(() => {
+            block_content.removeEventListener('click')
+        }, 10);
+    })
 })
-setInterval(() => {
-    console.log(logout_coniform);
-}, 2000);
