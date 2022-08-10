@@ -122,7 +122,7 @@
                             <li class=""><a href="/dashboard/">dashboard</a></li>
                             {% endif %}
                             {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'furn:logout' %}">Logout</a></li>
+                            <li><a href="{% url 'furn:logout-link' %}">Logout</a></li>
                             {% endif %}
                         </ul>
                         <!--/.nav -->
