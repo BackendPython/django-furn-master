@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, reverse
 from django.views import generic
 from furn.models import *
 from furn.form import *
@@ -37,7 +37,7 @@ def signup(request):
         form = Registration(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return reverse('furn:login')
     else:
         form = Registration()
         
