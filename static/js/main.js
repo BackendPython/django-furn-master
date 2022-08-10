@@ -4,4 +4,5 @@ let logout_coniform = document.querySelector('.logout-coniform')
 
 logout_button.addEventListener('click', function(){
     logout_coniform.style.display = 'block'
+    block_content.style.mixBlendMode = 'darken'
 })
