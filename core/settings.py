@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'furn',
     'dashboard',
-    'superuser'
 ]
 
 MIDDLEWARE = [

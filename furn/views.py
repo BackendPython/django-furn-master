@@ -13,11 +13,13 @@ def home(request):
 
     base = Carousel.objects.all()
     blog = Blog.objects.all()
+    users = MyUser.objects.count()
     products = Product.objects.all()
     categories = Category.objects.all()
     return render(request, 'pages/home.html', {
         "base": base,
          "blog":blog,
+         "users":users,
          "arrivals":arrivals,
          "products":products,
          "categories":categories,
@@ -36,7 +38,7 @@ def signup(request):
     if request.method == 'POST':
         form = Registration(request.POST)
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
             return redirect('/login')
     else:
         form = Registration()
