@@ -56,20 +56,12 @@
       </section>
 <script>
     let spans = document.querySelectorAll('span')
-    let email = document.querySelector('#id_email')
-    let username = document.querySelector('#id_username')
-    let password1 = document.querySelector('#id_password1')
-    let password2 = document.querySelector('#id_password2')
-    let form_control = [
-        email,
-        username,
-        password1,
-        password2,
-    ]
+    let inputs = document.querySelectorAll('input')
+
     spans.forEach(function(item){
         item.classList.add('form-label')
     })
-    form_control.forEach(function(item){
+    inputs.forEach(function(item){
         item.setAttribute('class', 'form-control')
     })
 </script>
