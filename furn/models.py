@@ -49,7 +49,6 @@ class Blog(models.Model):
 class Product(models.Model):
     img = models.ImageField()
     title = models.CharField(max_length=200)
-    products_url = models.URLField(max_length=500)
     price = models.IntegerField(default=1)
 
     def __str__(self):
