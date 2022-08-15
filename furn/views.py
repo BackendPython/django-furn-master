@@ -11,15 +11,13 @@ def home(request):
     else:
         arrivals = Arrival.objects.filter(category__category_name=category)
 
-    base = Carousel.objects.all()
     blog = Blog.objects.all()
-    users = MyUser.objects.count()
+    base = Carousel.objects.all()
     products = Product.objects.all()
     categories = Category.objects.all()
     return render(request, 'pages/home.html', {
         "base": base,
          "blog":blog,
-         "users":users,
          "arrivals":arrivals,
          "products":products,
          "categories":categories,

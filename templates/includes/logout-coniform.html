@@ -1,7 +1,6 @@
 {% load static %}
 <div class="logout-coniform">
     <img src="{% static 'logo/logout-logo.png' %}" alt="error">
-    <h1 class="username-text">{{ request.user.username }}</h1>
     <p>Coniform exit?
     </p>
     <a href="{% url 'furn:logout-link' %}" class="btn btn-info btn-lg logout-button">
