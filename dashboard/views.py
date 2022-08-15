@@ -1,8 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 def dashboard_home(request):
-    return render(request, 'dashboard/pages/home.html')
+    users = User.objects.count()
+    context = {
+        "users": users
+    }
+    return render(request, 'dashboard/pages/home.html', context)
 
 def buttons(request):
     return render(request, 'dashboard/includes/buttons.html')

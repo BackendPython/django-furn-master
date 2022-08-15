@@ -38,7 +38,7 @@ def signup(request):
     if request.method == 'POST':
         form = Registration(request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            form.save()
             return redirect('/login')
     else:
         form = Registration()
