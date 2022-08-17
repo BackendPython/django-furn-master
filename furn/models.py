@@ -8,7 +8,6 @@ class MyUser(AbstractUser):
     REQUIRED_FIELDS = ['first_name', 'last_name']
     is_organiser = models.BooleanField(default=False)
     is_agent = models.BooleanField(default=False)
-    user_image = models.ImageField()
 
 class Profile(models.Model):
     class Meta:
