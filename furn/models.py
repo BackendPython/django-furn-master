@@ -5,10 +5,17 @@ class MyUser(AbstractUser):
     username = None
     email = models.EmailField(unique=True)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['first_name', 'last_name']
     is_organiser = models.BooleanField(default=False)
     is_agent = models.BooleanField(default=False)
     user_image = models.ImageField()
+
+class Profile(models.Model):
+    class Meta:
+        verbose_name = "My profile"
+        verbose_name_plural = "Profile"
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    image = models.ImageField(default='arrivals5.png', upload_to = "profile")
 
 class Carousel(models.Model):
     img = models.ImageField()
