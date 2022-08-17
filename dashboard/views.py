@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth import get_user_model
-from furn.models import Product
+from furn.models import Product, Blog
 
 User = get_user_model()
 
 def dashboard_home(request):
     users = User.objects.count()
     products = Product.objects.count()
+    blogs = Blog.objects.count()
     context = {
+        "blogs":blogs,
         "users": users,
         "products":products,
     }
