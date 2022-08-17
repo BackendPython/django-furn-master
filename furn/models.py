@@ -13,7 +13,7 @@ class Profile(models.Model):
     class Meta:
         verbose_name = "My profile"
         verbose_name_plural = "Profile"
-    bio = models.CharField(default='bio', max_length=100)
+    bio = models.TextField(default=50, max_length=100)
     custome_user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     image = models.ImageField(default='arrivals5.png', upload_to = "profile")
     
