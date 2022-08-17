@@ -15,6 +15,9 @@ class Profile(models.Model):
         verbose_name_plural = "Profile"
     custome_user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     image = models.ImageField(default='arrivals5.png', upload_to = "profile")
+    
+    def __str__(self):
+        return self.custome_user
 
 class Carousel(models.Model):
     img = models.ImageField()

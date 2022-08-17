@@ -1,7 +1,6 @@
 {% load static %}
 
 
-{% if request.user.is_organiser %}
     <!DOCTYPE html>
     <html lang="en">
 
@@ -713,15 +712,14 @@
     </body>
 
     </html>
-{% endif %}
 
 
 
 
 
-{% if not request.user.is_organiser %}
 
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 
@@ -749,6 +747,5 @@
     </body>
 
 
-</html>
+</html> -->
 
-{% endif %}
