@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth import get_user_model
-from furn.models import Product, Blog
+from furn.models import Product, Blog, Arrival
 
 User = get_user_model()
 
@@ -9,10 +9,12 @@ def dashboard_home(request):
     users = User.objects.count()
     products = Product.objects.count()
     blogs = Blog.objects.count()
+    new_products = Arrival.objects.count()
     context = {
         "blogs":blogs,
         "users": users,
         "products":products,
+        "new_products": new_products,
     }
     return render(request, 'dashboard/pages/home.html', context)
 
@@ -54,3 +56,4 @@ def page_404(request):
 
 def blank(request):
     return render(request, 'dashboard/includes/blank.html')
+
