@@ -14,6 +14,7 @@ class Profile(models.Model):
         verbose_name = "My profile"
         verbose_name_plural = "Profile"
     bio = models.CharField( max_length=100, default="biooo")
+    phone_number = models.IntegerField(default=998949949494)
     custome_user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     image = models.ImageField(default='arrivals5.png', upload_to = "profile")
     
