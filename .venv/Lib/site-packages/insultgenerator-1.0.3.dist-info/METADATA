@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: insultgenerator
+Version: 1.0.3
+Summary: Random insult generator
+Home-page: https://github.com/tr00st/insult_generator
+Author: James Cheese
+Author-email: trust@tr00st.co.uk
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: six
+
+# insult_generator
+Random insult generator, written in Python
+
+[![Build Status](https://travis-ci.org/tr00st/insult_generator.svg?branch=master)](https://travis-ci.org/tr00st/insult_generator)
+[![PyPI - License](https://img.shields.io/pypi/l/insultgenerator.svg)](https://pypi.org/project/insultgenerator/)
+[![PyPI](https://img.shields.io/pypi/v/insultgenerator.svg)](https://pypi.org/project/insultgenerator/)
+
+# Usage
+
+	>>> from insultgenerator import phrases
+	>>> phrases.get_so_insult_with_action_and_target("Your Mom", "she")
+	"Your Mom's so ill-defined, she resituated the Tallula"
+	>>> phrases.get_so_insult_with_action_and_target("Your Mom", "she")
+	"Your Mom's so acerbic, she cold-chiselled the departmentalism"
+	>>> phrases.get_so_insult_with_action_and_target("Your Mom", "she")
+	"Your Mom's so bantam, she Indianized the tranquilizer"
+	>>> phrases.get_so_insult_with_action_and_target("Your Mom", "she")
+	"Your Mom's so fresh, she prussianised the Guesde"
+
+# Disclaimer
+
+No guarantees are made to the clarity or nonsensical nature of the insults created by this software.
+
+

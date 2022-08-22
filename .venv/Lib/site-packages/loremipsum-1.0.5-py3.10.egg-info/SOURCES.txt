@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+loremipsum/__init__.py
+loremipsum/generator.py
+loremipsum.egg-info/PKG-INFO
+loremipsum.egg-info/SOURCES.txt
+loremipsum.egg-info/dependency_links.txt
+loremipsum.egg-info/top_level.txt
+loremipsum/default/dictionary.txt
+loremipsum/default/sample.txt
