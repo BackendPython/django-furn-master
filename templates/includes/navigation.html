@@ -122,6 +122,7 @@
                             <li class=""><a href="/dashboard/">dashboard</a></li>
                             {% endif %}
                             {% if request.user.is_authenticated %}
+                            <li class="profile-navbar"><a href="{% url 'furn:profile' %}">Profile</a></li>
                             <li class="logout-navbar"><a href="#">Logout</a></li>
                             {% endif %}
                         </ul>
