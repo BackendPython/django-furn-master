@@ -1,3 +1,7 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
@@ -12,9 +16,9 @@
                                                         <div class="col-sm-4 bg-c-lite-green user-profile">
                                                             <div class="card-block text-center text-white">
                                                                 <div class="m-b-25">
-                                                                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                                                                    <img src="{{ user.profile.image.url }}" class="img-radius w-50" alt="User-Profile-Image">
                                                                 </div>
-                                                                <h6 class="f-w-600">Hembo Tingor</h6>
+                                                                <h6 class="f-w-600">{{ user.first_name }}</h6>
                                                                 <p>Web Designer</p>
                                                                 <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                                             </div>
@@ -25,7 +29,7 @@
                                                                 <div class="row">
                                                                     <div class="col-sm-6">
                                                                         <p class="m-b-10 f-w-600">Email</p>
-                                                                        <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                                                        <h6 class="text-muted f-w-400">{{ user.email }}</h6>
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <p class="m-b-10 f-w-600">Phone</p>
@@ -35,8 +39,8 @@
                                                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
                                                                 <div class="row">
                                                                     <div class="col-sm-6">
-                                                                        <p class="m-b-10 f-w-600">Recent</p>
-                                                                        <h6 class="text-muted f-w-400">Sam Disuja</h6>
+                                                                        <p class="m-b-10 f-w-600">Bio</p>
+                                                                        <h6 class="text-muted f-w-400">{{ user.profile.bio }}</h6>
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <p class="m-b-10 f-w-600">Address</p>
@@ -55,7 +59,8 @@
                                             </div>
                                              </div>
                                                 </div>
-                                            </div>
+
+</div>
 
 
 
@@ -198,3 +203,5 @@ p {
 
 
 </style>
+
+{% endblock %}

@@ -46,3 +46,7 @@ def signup(request):
 def logout_redirect(request):
     return render(request, 'registration/logout-redirect.html')
 
+def profile(request):
+    return render(request, 'pages/profile.html')
+
+
