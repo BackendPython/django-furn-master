@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-fa=ycow=)c2s#3wib1ferjpq2694+91oujijw5xxvc@*$-n@5y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['git.heroku.com/django-phone']
 
 
 # Application definition
