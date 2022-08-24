@@ -19,15 +19,15 @@ class UptadeUserForm(forms.ModelForm):
         fields = ['first_name', 'email']
         
 class UptadeProfileForm(forms.ModelForm):
-    image = forms.ImageField(
-        required=True,
-        widget=forms.FileInput(attrs={"class": "form-control-file"}))
+    # image = forms.ImageField(
+    #     required=True,
+    #     widget=forms.FileInput(attrs={"class": "form-control-file"}))
     phone_number = forms.EmailField(
         required=True,
-        widget=forms.TextInput(attrs={"class": "form-control"}))
+        widget=forms.NumberInput(attrs={"class": "form-control"}))
     class Meta:
         model = Profile
-        fields = ['image', 'phone_number']
+        fields = ['phone_number',]
         
 class Registration(UserCreationForm):
     class Meta:
