@@ -82,6 +82,6 @@ def uptadeProfileForm(request, pk):
         "profile_form": profile_form
     }
     
-    return render(request, 'pages/profile-eidt.html', context)
+    return render(request, 'pages/profile-edit.html', context)
 
 

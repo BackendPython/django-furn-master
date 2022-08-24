@@ -21,7 +21,7 @@
                                 </div>
                                 <h6 class="f-w-600">{{ user.first_name }}</h6>
                                 <p style="color: wheat; margin-top: 10px">Web Designer</p>
-                                <button type="submit" class="btn btn-primary" style="margin-top: 10px">Edit</button>
+                                <button type="submit" class="btn btn-primary" style="margin-top: 10px"><a href="{% url 'furn:uptade_profile' user.pk %}" style="color: white !important;">Edit</a></button>
                                 <!-- <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
                             </div>
                         </div>
