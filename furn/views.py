@@ -68,7 +68,7 @@ def profile(request):
 def uptadeProfileForm(request, pk):
     if request.method == 'post':
         user_form = UptadeUserForm(request.POST, instance=request.user)
-        profile_form = UptadeProfileForm(request.POST, request.FILE, instance=request.user.profile)
+        profile_form = UptadeProfileForm(request.POST, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
