@@ -27,7 +27,7 @@ class UptadeProfileForm(forms.ModelForm):
         widget=forms.TextInput(attrs={"class": "form-control"}))
     class Meta:
         model = Profile
-        fields = ['first_name', 'email']
+        fields = ['image', 'phone_number']
         
 class Registration(UserCreationForm):
     class Meta:
