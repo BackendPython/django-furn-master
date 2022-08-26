@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from furn.models import *
 from furn.form import *
@@ -47,13 +47,13 @@ def logout_redirect(request):
     return render(request, 'registration/logout-redirect.html')
 
 def profile(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         user_form = UptadeUserForm(request.POST, instance=request.user)
         profile_form = UptadeProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            return redirect(to="profile")
+            return reverse("furn:home")
     else:
         user_form = UptadeUserForm(instance=request.user)
         profile_form = UptadeProfileForm(instance=request.user.profile)
