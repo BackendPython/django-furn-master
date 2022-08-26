@@ -12,5 +12,4 @@ urlpatterns = [
     path('logout/', logout_redirect, name='logout-redirect'),
     path('logout-link', LogoutView.as_view(), name='logout-link'),
     path('<int:pk>/details/', arrivals_detail, name='arrival_detail'),
-    path('<int:pk>/profile-edit', uptadeProfileForm, name='uptade_profile'),
 ]

@@ -65,23 +65,23 @@ def profile(request):
     
     return render(request, 'pages/profile.html', context)
 
-def uptadeProfileForm(request, pk):
-    if request.method == 'post':
-        user_form = UptadeUserForm(request.POST, instance=request.user)
-        profile_form = UptadeProfileForm(request.POST, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            return redirect(to="profile")
-    else:
-        user_form = UptadeUserForm(instance=request.user)
-        profile_form = UptadeProfileForm(instance=request.user.profile)
+# def uptadeProfileForm(request, pk):
+#     if request.method == 'post':
+#         user_form = UptadeUserForm(request.POST, instance=request.user)
+#         profile_form = UptadeProfileForm(request.POST, instance=request.user.profile)
+#         if user_form.is_valid() and profile_form.is_valid():
+#             user_form.save()
+#             profile_form.save()
+#             return redirect(to="profile")
+#     else:
+#         user_form = UptadeUserForm(instance=request.user)
+#         profile_form = UptadeProfileForm(instance=request.user.profile)
     
-    context = {
-        "user_form": user_form,
-        "profile_form": profile_form
-    }
+#     context = {
+#         "user_form": user_form,
+#         "profile_form": profile_form
+#     }
     
-    return render(request, 'pages/profile-edit.html', context)
+#     return render(request, 'pages/profile-edit.html', context)
 
 
