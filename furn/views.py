@@ -53,7 +53,7 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            return reverse("furn:home")
+            return redirect("furn:home")
     else:
         user_form = UptadeUserForm(instance=request.user)
         profile_form = UptadeProfileForm(instance=request.user.profile)
