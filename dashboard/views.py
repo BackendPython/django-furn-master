@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
 from django.contrib.auth import get_user_model
-from furn.models import Product, Blog, Arrival
+from django.contrib.auth import logout
 from django.db.models import Q
+from furn.models import *
 
 User = get_user_model()
 
@@ -57,6 +57,9 @@ def tables(request):
     
     # else:
     #     products = Product.objects.all()
+    context = {
+        
+    }
     return render(request, 'dashboard/includes/tables.html')
 
 def page_404(request):
