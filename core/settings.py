@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'furn',
     'dashboard',
     
-    'widget-tweaks',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
