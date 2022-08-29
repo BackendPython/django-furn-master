@@ -12,9 +12,17 @@
     <h1>{{ user.first_name }}</h1>
     <h1>{{ user.email }}</h1>
     <form method="post" enctype="multipart/form-data">
+        {% load widget_tweaks %}
         {% csrf_token %}
-        {{ user_form }}
-        {{ profile_form }}
+        <div class="row">
+            <div class="col-md-6 form-group mt-5">
+                {% render_field user_form.first_name type='text' class='form-control' %}
+            </div>
+            <div class="col-md-6 form-group mt-5">
+                {% render_field user_form.email type='email' class='form-control' %}
+            </div>
+            
+        </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
