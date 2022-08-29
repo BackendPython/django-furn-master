@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth import get_user_model
 from furn.models import Product, Blog, Arrival
+from django.db.models import Q
 
 User = get_user_model()
 
@@ -49,6 +50,13 @@ def charts(request):
     return render(request, 'dashboard/includes/charts.html')
 
 def tables(request):
+    if 'q' in request.GET:
+        search = request.GET['q']
+        full_serach = Q(Q(title__icontains=search) | Q(price__icontains=search) )
+        products = Product.objects.filter(full_serach)
+    
+    else:
+        products = Product.objects.all()
     return render(request, 'dashboard/includes/tables.html')
 
 def page_404(request):
