@@ -15,11 +15,13 @@ def home(request):
     if 'q' in request.GET:
         search = request.GET['q']
         full_serach = Q(Q(title__icontains=search))
-        product = Product.objects.filter(full_serach)
-        
+        products = Product.objects.filter(full_serach)
+    
+    else:
+        products = Product.objects.all()
+    
     blog = Blog.objects.all()
     base = Carousel.objects.all()
-    products = Product.objects.all()
     categories = Category.objects.all()
     return render(request, 'pages/home.html', {
         "base": base,
