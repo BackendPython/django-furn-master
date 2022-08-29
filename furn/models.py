@@ -75,7 +75,7 @@ class Product(models.Model):
     price = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.title
+        return self.price
 
 class Subscribe(models.Model):
     email = models.EmailField()
@@ -92,5 +92,6 @@ class Category(models.Model):
     
     def __str__(self):
         return self.category_name
+    
 
-
+ 
