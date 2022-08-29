@@ -39,14 +39,16 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        {% for user in user %}
                                         <tr>
                                             <td>{{ user.first_name }}</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>{{ user.last_name }}</td>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.profile.bio }}</td>
+                                            <td>{{ user.profile.phone_number }}</td>
+                                            <td>{{ user.profile.sell }}</td>
                                         </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
