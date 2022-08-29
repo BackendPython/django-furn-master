@@ -20,8 +20,6 @@ class Profile(models.Model):
     custome_user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     image = models.ImageField(default='arrivals5.png', upload_to = "profile")
     
-    def __str__(self):
-        return self.phone_number
     
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)

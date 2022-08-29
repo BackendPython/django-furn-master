@@ -23,7 +23,7 @@
                                             <th>Name</th>
                                             <th>Position</th>
                                             <th>Office</th>
-                                            <th>Age</th>
+                                            <th>Phone number</th>
                                             <th>Start date</th>
                                             <th>Salary</th>
                                         </tr>
@@ -34,8 +34,8 @@
                                             <td>{{ user.first_name }}</td>
                                             <td>{{ user.last_name }}</td>
                                             <td>{{ user.email }}</td>
-                                            <td>{{ user.profile.bio }}</td>
                                             <td>{{ user.profile.phone_number }}</td>
+                                            <td>{{ user.profile.bio }}</td>
                                             <td>{{ user.profile.sell }}</td>
                                         </tr>
                                         {% endfor %}
