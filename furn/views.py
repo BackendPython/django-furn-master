@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.views import generic
+from django.db.models import Q
 from furn.models import *
 from furn.form import *
 
@@ -11,6 +12,11 @@ def home(request):
     else:
         arrivals = Arrival.objects.filter(category__category_name=category)
 
+    if 'q' in request.GET:
+        search = request.GET['q']
+        full_serach = Q(Q(title__icontains=search))
+        product = Product.objects.filter(full_serach)
+        
     blog = Blog.objects.all()
     base = Carousel.objects.all()
     products = Product.objects.all()
