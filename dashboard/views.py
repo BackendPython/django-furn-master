@@ -50,14 +50,16 @@ def charts(request):
     return render(request, 'dashboard/includes/charts.html')
 
 def tables(request):
-    if 'q' in request.GET:
-        search = request.GET['q']
-        full_serach = Q(Q(first_name__icontains=search))
-        user_info = Product.objects.filter(full_serach)
+    if 'search' in request.GET:
+        search = request.GET['search']
+        full_search = Q(Q(first_name__icontains=search))
+        user_info = User.objects.filter(full_search)
+        
     else:
         user_info = User.objects.all()
+        
     context = {
-        "user": user_info
+        "user": user_info,
     }
     return render(request, 'dashboard/includes/tables.html', context)
 
