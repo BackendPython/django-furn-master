@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.contrib.auth import get_user_model
-from furn.models import Profile
+from furn.models import Contact, Profile
 from django import forms
 
 User = get_user_model()
@@ -19,6 +19,11 @@ class Registration(UserCreationForm):
     class Meta:
         model = User
         fields = ["first_name", "last_name", "email", "password1", "password2",]
+        
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['full_name', 'email', 'choices', 'mobile']
 
 
         
