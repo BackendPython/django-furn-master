@@ -32,8 +32,9 @@ def home(request):
     base = Carousel.objects.all()
     categories = Category.objects.all()
     return render(request, 'pages/home.html', {
-        "base": base,
          "blog":blog,
+         "base": base,
+         "form": form,
          "arrivals":arrivals,
          "products":products,
          "categories":categories,
