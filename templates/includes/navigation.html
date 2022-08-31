@@ -116,7 +116,7 @@
                         <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="active"><a href="{% url 'furn:home' %}">home</a></li>
                             <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
-                            <li class="scroll"><a href="#newsletter">contact</a></li>
+                            <li><a href="#contactus">contact</a></li>
                             {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'furn:signup' %}">Register</a></li>
                             <li><a href="{% url 'furn:login' %}">Login</a></li>
