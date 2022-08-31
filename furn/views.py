@@ -63,7 +63,7 @@ def signup(request):
 def logout_redirect(request):
     return render(request, 'registration/logout-redirect.html')
 
-def profile(request):   
+def profile(request):
     if request.method == 'POST':
         user_form = UptadeUserForm(request.POST, instance=request.user)
         profile_form = UptadeProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -81,7 +81,4 @@ def profile(request):
     }
     
     return render(request, 'pages/profile.html', context)
-
-
-
 
