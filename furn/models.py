@@ -105,5 +105,5 @@ class Contact(models.Model):
     
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
-    choices = models.CharField(max_length=8, choices=CONTACT_CHOICES)
+    choices = models.CharField(max_length=8, choices=CONTACT_CHOICES, default=TAKLIF)
     mobile = models.IntegerField(default='+998')
