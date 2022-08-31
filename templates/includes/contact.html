@@ -1,10 +1,13 @@
 <div class="container">
     <form id="contactus" method="post">
+        {% load widget_tweaks %}
+        {% csrf_token %}
         <h3>Contact us form</h3>
-        <fieldset> <input placeholder="Full name" type="text" tabindex="1" required autofocus> </fieldset>
-        <fieldset> <input placeholder="Email Address" type="email" tabindex="2" required> </fieldset>
-        <fieldset> <input placeholder="Phone Number" type="tel" tabindex="3" required> </fieldset>
-        <fieldset> <textarea placeholder="Type your message here..." tabindex="5" required></textarea> </fieldset>
+        <fieldset> {% render_field form.full_name type='text' placeholder='Full Name' %} </fieldset>
+        <fieldset> {% render_field form.email type='email' placeholder='Email Adress' %} </fieldset>
+        <fieldset> {% render_field form.mobile type='number' placeholder='Phone Number' %} </fieldset>
+        <fieldset> {% render_field form.choices %} </fieldset>
+        <fieldset> {% render_field form.text type='text' placeholder='Type your message here...' %} </fieldset>
         <fieldset> <button name="submit" type="submit" id="contactus-submit" data-submit="...Sending"><i id="icon" class=""></i> Send</button>
         </fieldset>
     </form>
