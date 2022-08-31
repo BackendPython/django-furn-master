@@ -93,4 +93,17 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
-
+class Contact(models.Model):
+    
+    TAKLIF = 'Taklif'
+    SUPPORT = 'Support'
+    
+    CONTACT_CHOICES = [
+        (TAKLIF, 'Taklif'),
+        (SUPPORT, 'Support'),
+    ]
+    
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    choices = models.CharField(max_length=8, choices=CONTACT_CHOICES)
+    mobile = models.IntegerField(default='+998')
