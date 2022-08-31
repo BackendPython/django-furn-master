@@ -19,6 +19,14 @@ def home(request):
     
     else:
         products = Product.objects.all()
+        
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+    else:
+        form = ContactForm()
     
     blog = Blog.objects.all()
     base = Carousel.objects.all()
