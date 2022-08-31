@@ -9,5 +9,10 @@
     {% include 'includes/sofa-collection.html' %}
     {% include 'includes/feature.html' %}
     {% include 'includes/blog.html' %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
     {% include 'includes/clients.html' %}
 {% endblock content %}
