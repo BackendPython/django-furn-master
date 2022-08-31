@@ -9,11 +9,13 @@ User = get_user_model()
 def dashboard_home(request):
     users = User.objects.count()
     blogs = Blog.objects.count()
+    support = Contact.objects.count()
     new_products = Arrival.objects.count()
     products = Product.objects.count() + new_products
     context = {
         "blogs":blogs,
         "users": users,
+        "support": support,
         "products":products,
         "new_products": new_products,
     }
