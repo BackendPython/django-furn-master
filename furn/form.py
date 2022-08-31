@@ -23,7 +23,7 @@ class Registration(UserCreationForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['full_name', 'email', 'choices', 'mobile']
+        fields = ['full_name', 'email', 'choices', 'mobile', 'text']
 
 
         

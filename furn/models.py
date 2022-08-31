@@ -108,3 +108,6 @@ class Contact(models.Model):
     choices = models.CharField(max_length=8, choices=CONTACT_CHOICES, default=TAKLIF)
     mobile = models.IntegerField(default='+998')
     text = models.TextField(max_length=700)
+    
+    def __str__(self):
+        return self.full_name
