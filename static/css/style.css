@@ -47,6 +47,7 @@ body{
     max-width:1920px;
     margin:0 auto;
 	overflow-x:hidden;
+    scroll-behavior: smooth;
 }
 
 .foot-email-box label{
