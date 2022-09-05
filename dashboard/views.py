@@ -17,7 +17,7 @@ def dashboard_home(request):
     products = Product.objects.count() + new_products
     contact_taklif = Contact.objects.filter(choices="Taklif").count()
     contact_support = Contact.objects.filter(choices="Support").count()
-    contact_last = Contact.objects.filter(data__range=[today - timezone.timedelta(minutes=60), today]).count()
+    contact_last = Contact.objects.filter(data__date=timezone.now()).count()
     context = {
         "blogs":blogs,
         "users": users,
