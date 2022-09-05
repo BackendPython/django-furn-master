@@ -12,12 +12,16 @@ def dashboard_home(request):
     support = Contact.objects.count()
     new_products = Arrival.objects.count()
     products = Product.objects.count() + new_products
+    contact_taklif = Contact.objects.filter(choices="Taklif").count()
+    contact_support = Contact.objects.filter(choices="Support").count()
     context = {
         "blogs":blogs,
         "users": users,
         "support": support,
         "products":products,
         "new_products": new_products,
+        "contact_taklif": contact_taklif,
+        "contact_support": contact_support,
     }
     return render(request, 'dashboard/pages/home.html', context)
 
