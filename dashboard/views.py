@@ -1,3 +1,4 @@
+from msilib import datasizemask
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.contrib.auth import logout
@@ -14,7 +15,7 @@ def dashboard_home(request):
     products = Product.objects.count() + new_products
     contact_taklif = Contact.objects.filter(choices="Taklif").count()
     contact_support = Contact.objects.filter(choices="Support").count()
-    # contact_last = 
+    contact_last = Contact.objects.filter(datasizemask)
     context = {
         "blogs":blogs,
         "users": users,
