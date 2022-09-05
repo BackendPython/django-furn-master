@@ -23,6 +23,7 @@ def dashboard_home(request):
         "users": users,
         "support": support,
         "products":products,
+        "contact_last": contact_last,
         "new_products": new_products,
         "contact_taklif": contact_taklif,
         "contact_support": contact_support,
