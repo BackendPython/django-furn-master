@@ -1,9 +1,11 @@
-from msilib import datasizemask
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.contrib.auth import logout
+from django.utils import timezone
 from django.db.models import Q
 from furn.models import *
+
+today = timezone.now().today()
 
 User = get_user_model()
 
@@ -15,7 +17,7 @@ def dashboard_home(request):
     products = Product.objects.count() + new_products
     contact_taklif = Contact.objects.filter(choices="Taklif").count()
     contact_support = Contact.objects.filter(choices="Support").count()
-    contact_last = Contact.objects.filter(datasizemask)
+    contact_last = Contact.objects.filter(data__range=[today - timezone.timedelta(days=30), today])
     context = {
         "blogs":blogs,
         "users": users,
