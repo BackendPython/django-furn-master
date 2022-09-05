@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.db.models import Q
 from furn.models import *
 
-today = timezone.now().today()
+today = timezone.now().astimezone()
 
 User = get_user_model()
 
@@ -17,7 +17,7 @@ def dashboard_home(request):
     products = Product.objects.count() + new_products
     contact_taklif = Contact.objects.filter(choices="Taklif").count()
     contact_support = Contact.objects.filter(choices="Support").count()
-    contact_last = Contact.objects.filter(data__range=[today - timezone.timedelta(days=30), today])
+    contact_last = Contact.objects.filter(data__range=[today - timezone.timedelta(minutes=60), today]).count()
     context = {
         "blogs":blogs,
         "users": users,
