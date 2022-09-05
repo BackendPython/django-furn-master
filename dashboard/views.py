@@ -14,6 +14,7 @@ def dashboard_home(request):
     products = Product.objects.count() + new_products
     contact_taklif = Contact.objects.filter(choices="Taklif").count()
     contact_support = Contact.objects.filter(choices="Support").count()
+    # contact_last = 
     context = {
         "blogs":blogs,
         "users": users,
