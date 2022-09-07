@@ -22,16 +22,6 @@
                             </p>
                             <h3><a href="#">{{ y.title }}</a></h3>
                             <h5>${{ y.price }}</h5>
-                            <form method="POST">
-                                {% csrf_token %}
-                                {{ rate_form }}
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
                         </div>
                     </div>
                 </div>
