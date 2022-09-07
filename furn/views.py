@@ -27,14 +27,6 @@ def home(request):
         return redirect('/')
     else:
         form = ContactForm()
-        
-    if request.method=='POST':
-        rate_form = Product_Rate_Form(request.POST)
-        if rate_form.is_valid():
-            rate_form.save()
-        return redirect('/')
-    else:
-        rate_form = Product_Rate_Form()
     
     blog = Blog.objects.all()
     base = Carousel.objects.all()
@@ -45,7 +37,6 @@ def home(request):
          "form": form,
          "arrivals":arrivals,
          "products":products,
-         "rate_form": rate_form,
          "categories":categories,
         })
     
@@ -91,5 +82,18 @@ def profile(request):
     
     return render(request, 'pages/profile.html', context)
 
+def rate_fun(request, pk):
+    rate = Product.objects.get(id=pk)
+    if request.method == 'POST':
+        rate_form = Product_Rate_Form(request.POST)
+        if rate_form.is_valid():
+            rate_form.save()
+        return redirect('furn:home')
+    else:
+        rate_form = Product_Rate_Form()
 
-
+    context = {
+        "rate": rate,
+        "rate_form": rate_form,
+    }
+    return render(request, 'pages/rate.html')
