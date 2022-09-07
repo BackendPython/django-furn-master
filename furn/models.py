@@ -74,6 +74,11 @@ class Product(models.Model):
     img = models.ImageField()
     title = models.CharField(max_length=200)
     price = models.IntegerField(default=1)
+    fake_rate_1 = models.IntegerField(default=1)
+    fake_rate_2 = models.IntegerField(default=2)
+    fake_rate_3 = models.IntegerField(default=3)
+    fake_rate_4 = models.IntegerField(default=4)
+    fake_rate_5 = models.IntegerField(default=5)
 
     def __str__(self):
         return self.title
@@ -113,4 +118,6 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.full_name
+
+
 
