@@ -1,3 +1,4 @@
+from dataclasses import fields
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.contrib.auth import get_user_model
 from furn.models import Contact, Product, Profile
@@ -25,9 +26,9 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ['full_name', 'email', 'choices', 'mobile', 'text']
 
-# class Product_Rate_Form(forms.ModelForm):
-#     class Meta:
-#         model = Product
-#         fields = ['']
+class Product_Rate_Form(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['rate_1', 'rate_2', 'rate_3', 'rate_4', 'rate_5']
         
 
