@@ -9,6 +9,7 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('profile', profile, name='profile'),
     path('login/', LoginView.as_view(), name='login'),
+    path('<int:pk>-rate', rate_fun, name='rate_product'),
     path('logout/', logout_redirect, name='logout-redirect'),
     path('logout-link', LogoutView.as_view(), name='logout-link'),
     path('<int:pk>/details/', arrivals_detail, name='arrival_detail'),
