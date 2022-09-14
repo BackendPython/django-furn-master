@@ -12,10 +12,9 @@
         <!--/.section-header-->
         <div class="feature-content">
             <div class="row">
-                {% for y in products %}
                 <div class="col-sm-3">
                     <div class="single-feature">
-                        <img src="{{ y.img.url }}" alt="feature image" width="300">
+                        <img src="{{ rate.img.url }}" alt="feature image" width="300">
                         <div class="single-feature-txt text-center">
                             <p>
                                 <i class="fa fa-star"></i>
@@ -24,14 +23,13 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                                {{ y.rate_1_choices }}
+                                {{ rate.rate_choices }}
                             </p>
-                            <h3><a href="{% url 'furn:rate_product' y.pk %}">{{ y.title }}</a></h3>
-                            <h5>${{ y.price }}</h5>
+                            <h3><a href="#">{{ rate.title }}</a></h3>
+                            <h5>${{ rate.price }}</h5>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
