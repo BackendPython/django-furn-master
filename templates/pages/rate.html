@@ -69,11 +69,13 @@
     let rate_input = document.querySelector('#id_rating')
     let ratings = document.querySelectorAll('.stars')
     let rate_btn = document.querySelector('#rate_btn')
-    
-    rate_input.value = 5
 
     ratings.forEach(function(star){
         star.classList.add('gray')
+        for(let i=0;i<2;i++){
+            ratings[i].classList.add('yellow')
+            ratings[i].classList.remove('gray')
+        }
     })
     setInterval(() => {
         ratings.forEach(function(item){
@@ -86,6 +88,7 @@
                 ratings[i].classList.add('gray')
                 ratings[i].classList.remove('yellow')
             }
+            rate_input.value = item.id
         })
         })
     }, 10);

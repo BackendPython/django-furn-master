@@ -72,7 +72,7 @@ class Blog(models.Model):
 
 class Product(models.Model):
     
-    rating = models.CharField(max_length=10, default='1')
+    rating = models.CharField(max_length=10, default='2')
     
     img = models.ImageField()
     price = models.IntegerField(default=1)
