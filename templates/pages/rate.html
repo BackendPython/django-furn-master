@@ -78,10 +78,15 @@
     setInterval(() => {
         ratings.forEach(function(item){
             item.addEventListener('click', function(){
-            item.classList.add('yellow')
-            item.classList.remove('gray')
+            for(let i=0; i<item.id; i++){
+                ratings[i].classList.add('yellow')
+                ratings[i].classList.remove('gray')
+            }
+            for(let i=item.id; i<ratings.length ;i++){
+                ratings[i].classList.add('gray')
+                ratings[i].classList.remove('yellow')
+            }
         })
-        
         })
     }, 10);
 
