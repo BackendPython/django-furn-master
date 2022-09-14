@@ -26,11 +26,7 @@
                                     <i class="fa fa-star"></i>
                                     <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
                                     {{ rate_form }}
-                                    {{ rate.rate_choices }}
-                                    {% for rate in rate_form %}
-                                    {{ rate.rate_choices }}
-                                    {% endfor %}
-                                </p> 
+                                </p>
                                 <h3><a href="#">{{ rate.title }}</a></h3>
                                 <h5>${{ rate.price }}</h5>
                                 <button type="submit" class="btn btn-primary" id="rate_product">Rate product</button>

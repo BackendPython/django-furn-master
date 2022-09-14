@@ -78,7 +78,7 @@ class Product(models.Model):
     rate_4 = '4'
     rate_5 = '5'
     
-    RATE_CHOICES = [
+    RATE_CHOICES_FIELD = [
         (rate_1, '1'),
         (rate_2, '2'),
         (rate_3, '3'),
@@ -89,7 +89,7 @@ class Product(models.Model):
     img = models.ImageField()
     price = models.IntegerField(default=1)
     title = models.CharField(max_length=200)
-    rate_choices = models.CharField(max_length=8, choices=RATE_CHOICES, default=rate_5)
+    rate_choices = models.CharField(max_length=8, choices=RATE_CHOICES_FIELD, default=rate_5)
 
     def __str__(self):
         return self.title
