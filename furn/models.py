@@ -71,14 +71,25 @@ class Blog(models.Model):
 
 
 class Product(models.Model):
+    
+    rate_1 = 'rate_1'
+    rate_2 = 'rate_2'
+    rate_3 = 'rate_3'
+    rate_4 = 'rate_4'
+    rate_5 = 'rate_5'
+    
+    CONTACT_CHOICES = [
+        (rate_1, 'rate_1'),
+        (rate_2, 'rate_2'),
+        (rate_3, 'rate_3'),
+        (rate_4, 'rate_4'),
+        (rate_5, 'rate_5')
+    ]
+    
     img = models.ImageField()
     title = models.CharField(max_length=200)
     price = models.IntegerField(default=1)
-    rate_1 = models.IntegerField(default=1)
-    rate_2 = models.IntegerField(default=2)
-    rate_3 = models.IntegerField(default=3)
-    rate_4 = models.IntegerField(default=4)
-    rate_5 = models.IntegerField(default=5)
+    rate_1_choices = models.CharField(max_length=8, choices=CONTACT_CHOICES, default=TAKLIF)
 
     def __str__(self):
         return self.title
