@@ -72,11 +72,7 @@ class Blog(models.Model):
 
 class Product(models.Model):
     
-    rate_1 = models.CharField(max_length=10, default='1')
-    rate_2 = models.CharField(max_length=10, default='2')
-    rate_3 = models.CharField(max_length=10, default='3')
-    rate_4 = models.CharField(max_length=10, default='4')
-    rate_5 = models.CharField(max_length=10, default='5')
+    rating = models.CharField(max_length=10, default='1')
     
     img = models.ImageField()
     price = models.IntegerField(default=1)

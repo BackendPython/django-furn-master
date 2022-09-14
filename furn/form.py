@@ -28,6 +28,6 @@ class ContactForm(forms.ModelForm):
 class Product_Rate_Form(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['rate_1', 'rate_2', 'rate_3', 'rate_4', 'rate_5',]
+        fields = ['rating', ]
         
 
