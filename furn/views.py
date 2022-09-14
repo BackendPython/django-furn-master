@@ -88,7 +88,7 @@ def rate_fun(request, pk):
         rate_form = Product_Rate_Form(request.POST)
         if rate_form.is_valid():
             rate_form.save()
-            return redirect('furn:home')
+        return redirect('furn:home')
     else:
         rate_form = Product_Rate_Form()
 
