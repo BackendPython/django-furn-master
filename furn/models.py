@@ -87,8 +87,9 @@ class Product(models.Model):
     ]
     
     img = models.ImageField()
-    title = models.CharField(max_length=200)
     price = models.IntegerField(default=1)
+    title = models.CharField(max_length=200)
+    sender = models.CharField(max_length=100, default='user')
     rate_choices = models.CharField(max_length=8, choices=RATE_CHOICES, default=rate_5)
 
     def __str__(self):
