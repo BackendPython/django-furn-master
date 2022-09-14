@@ -12,24 +12,23 @@
         <!--/.section-header-->
         <div class="feature-content">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3 d-grid" id="main_form">
                     <form method="post">
                         {% csrf_token %}
                         <div class="single-feature">
                             <img src="{{ rate.img.url }}" alt="feature image" width="300">
                             <div class="single-feature-txt text-center">
                                 <p>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                                    {{ rate_form }}
+                                    <i class="fa-solid fa-star stars" id="1"></i>
+                                    <i class="fa-solid fa-star stars" id="2"></i>
+                                    <i class="fa-solid fa-star stars" id="3"></i>
+                                    <i class="fa-solid fa-star stars" id="4"></i>
+                                    <i class="fa-solid fa-star stars" id="5"></i>
                                 </p>
+                                {{ rate_form }}
                                 <h3><a href="#">{{ rate.title }}</a></h3>
                                 <h5>${{ rate.price }}</h5>
-                                <button type="submit" class="btn btn-primary" id="rate_product">Rate product</button>
+                                <button type="submit" class="btn btn-primary" id="rate_btn">Rate product</button>
                             </div>
                         </div>
                     </form>
@@ -40,5 +39,54 @@
     <!--/.container-->
 
 </section>
+
+
+<style>
+    #main_form *{
+        display: grid;
+        margin-top: 10px;
+    }
+    #main_form p{
+        display: flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+    #id_rating{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .yellow{
+        color: yellow !important;
+    }
+    .gray{
+        color: gray !important;
+    }
+</style>
+
+<script>
+    let rate_input = document.querySelector('#id_rating')
+    let ratings = document.querySelectorAll('.stars')
+    let rate_btn = document.querySelector('#rate_btn')
+    
+    rate_input.value = 5
+
+    ratings.forEach(function(star){
+        star.classList.add('gray')
+    })
+    setInterval(() => {
+        ratings.forEach(function(item){
+            item.addEventListener('click', function(){
+            item.classList.add('yellow')
+            item.classList.remove('gray')
+        })
+        
+        })
+    }, 10);
+
+
+
+</script>
 
 {% endblock %}
