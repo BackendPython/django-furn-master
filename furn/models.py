@@ -72,24 +72,15 @@ class Blog(models.Model):
 
 class Product(models.Model):
     
-    rate_1 = '1'
-    rate_2 = '2'
-    rate_3 = '3'
-    rate_4 = '4'
-    rate_5 = '5'
-    
-    RATE_CHOICES_FIELD = [
-        (rate_1, '1'),
-        (rate_2, '2'),
-        (rate_3, '3'),
-        (rate_4, '4'),
-        (rate_5, '5'),
-    ]
+    rate_1 = models.CharField(max_length=10, default='1')
+    rate_2 = models.CharField(max_length=10, default='2')
+    rate_3 = models.CharField(max_length=10, default='3')
+    rate_4 = models.CharField(max_length=10, default='4')
+    rate_5 = models.CharField(max_length=10, default='5')
     
     img = models.ImageField()
     price = models.IntegerField(default=1)
     title = models.CharField(max_length=200)
-    rate_choices = models.CharField(max_length=8, choices=RATE_CHOICES_FIELD, default=rate_5)
 
     def __str__(self):
         return self.title
