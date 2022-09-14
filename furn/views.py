@@ -96,4 +96,4 @@ def rate_fun(request, pk):
         "rate": rate,
         "rate_form": rate_form,
     }
-    return render(request, 'pages/rate.html')
+    return render(request, 'pages/rate.html', context)
