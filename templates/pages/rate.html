@@ -13,22 +13,25 @@
         <div class="feature-content">
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="single-feature">
-                        <img src="{{ rate.img.url }}" alt="feature image" width="300">
-                        <div class="single-feature-txt text-center">
-                            <p>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
-                                {{ rate.rate_choices }}
-                            </p>
-                            <h3><a href="#">{{ rate.title }}</a></h3>
-                            <h5>${{ rate.price }}</h5>
+                    <form method="post">
+                        <div class="single-feature">
+                            <img src="{{ rate.img.url }}" alt="feature image" width="300">
+                            <div class="single-feature-txt text-center">
+                                <p>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
+                                    {{ rate_form }}
+                                </p>
+                                <h3><a href="#">{{ rate.title }}</a></h3>
+                                <h5>${{ rate.price }}</h5>
+                                <button type="submit" class="btn btn-primary" id="rate_product">Rate product</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
