@@ -26,6 +26,7 @@
                                     <i class="fa-solid fa-star stars" id="5"></i>
                                 </p>
                                 {{ rate_form }}
+                                <div class="rate_num">{{ rate.rating }}</div>
                                 <h3><a href="#">{{ rate.title }}</a></h3>
                                 <h5>${{ rate.price }}</h5>
                                 <button type="submit" class="btn btn-primary" id="rate_btn">Rate product</button>
@@ -67,14 +68,16 @@
 
 <script>
     let rate_input = document.querySelector('#id_rating')
-    let ratings = document.querySelectorAll('.stars')
+    let rate_num = document.querySelector('.rate_num')
     let rate_btn = document.querySelector('#rate_btn')
+    let ratings = document.querySelectorAll('.stars')
 
     ratings.forEach(function(star){
         star.classList.add('gray')
-        for(let i=0;i<2;i++){
+        for(let i=0;i<rate_num.textContent;i++){
             ratings[i].classList.add('yellow')
             ratings[i].classList.remove('gray')
+            rate_input.value = rate_num.textContent
         }
     })
     setInterval(() => {
