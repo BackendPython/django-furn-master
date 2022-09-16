@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from django.db.models import Q
+from django.db.models import Avg
 from furn.models import *
 from furn.form import *
 
@@ -84,6 +85,7 @@ def profile(request):
 
 def rate_fun(request, pk):
     rate = Product.objects.get(id=pk)
+    avg_rate = Product.objects.aggregate(Avg("score"))
     if request.method == 'POST':
         rate_form = Product_Rate_Form(request.POST)
         if rate_form.is_valid():
@@ -94,6 +96,7 @@ def rate_fun(request, pk):
 
     context = {
         "rate": rate,
+        "avg_rate": avg_rate,
         "rate_form": rate_form,
     }
     return render(request, 'pages/rate.html', context)
