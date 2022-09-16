@@ -27,7 +27,7 @@
                                 </p>
                                 {{ rate_form }}
                                 <div class="rate_num">{{ rate.rating }}</div>
-                                <h3><a href="#">{{ rate.title }}</a></h3>
+                                <h3><a href="#" class="product_title">{{ rate.title }}</a></h3>
                                 <h5>${{ rate.price }}</h5>
                                 {{ avg_rate.rating__avg }}
                                 <button type="submit" class="btn btn-primary" id="rate_btn">Rate product</button>
@@ -68,18 +68,27 @@
 </style>
 
 <script>
+    let product_title = document.querySelector('.product_title')
+    let secret_input = document.querySelector('#id_secret')
     let rate_input = document.querySelector('#id_rating')
     let rate_num = document.querySelector('.rate_num')
     let rate_btn = document.querySelector('#rate_btn')
     let ratings = document.querySelectorAll('.stars')
 
     ratings.forEach(function(star){
+        let labels = document.querySelectorAll('label')
+        labels.forEach(function(label){
+            label.remove()
+        })
+
         star.classList.add('gray')
         for(let i=0;i<rate_num.textContent;i++){
             ratings[i].classList.add('yellow')
             ratings[i].classList.remove('gray')
             // rate_input.style.display = 'none'
+            // secret_input.style.display = 'none'
             rate_input.value = rate_num.textContent
+            secret_input.value = product_title.textContent
         }
     })
     setInterval(() => {
