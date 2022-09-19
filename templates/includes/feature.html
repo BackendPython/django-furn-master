@@ -48,16 +48,16 @@
 </style>
 
 <script>
-    let rate_num = document.querySelector('.rate_text')
-    let ratings = rate_num.parentNode.querySelectorAll('.starts_main')
-
-    ratings.forEach(function(star){
-
+    let rate_num = document.querySelectorAll('.rate_text')
+    rate_num.forEach(function(rate_num_parent){
+        let ratings = rate_num_parent.parentNode.querySelectorAll('.starts_main')
+        ratings.forEach(function(star){
         star.classList.add('gray')
-        for(let i=0;i<rate_num.textContent;i++){
+        for(let i=0;i<rate_num_parent.textContent;i++){
             ratings[i].classList.add('yellow')
             ratings[i].classList.remove('gray')
         }
+        })
     })
 </script>
 
