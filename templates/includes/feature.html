@@ -22,7 +22,7 @@
                                 <i class="fa fa-star starts_main" id="5"></i>
                             </p>
                             <h3><a href="{% url 'furn:rate_product' y.pk %}">{{ y.title }}</a></h3>
-                            <h1 class="rate_text" style="display: none;">{{ y.rating }}</h1>
+                            <h1 class="rate_text">{{ y.rating }}</h1>
                             <h5>${{ y.price }}</h5>
                         </div>
                     </div>
@@ -54,6 +54,7 @@
         ratings.forEach(function(star){
         star.classList.add('gray')
         for(let i=0;i<rate_num_parent.textContent;i++){
+            rate_num_parent.remove()
             ratings[i].classList.add('yellow')
             ratings[i].classList.remove('gray')
         }
