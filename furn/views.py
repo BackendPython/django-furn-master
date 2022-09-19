@@ -87,12 +87,12 @@ def rate_fun(request, pk):
     rate = Product.objects.get(id=pk)
     avg_rate = Product.objects.aggregate(Avg("rating"))
     if request.method == 'POST':
-        rate_form = Product_Rate_Form(request.POST)
+        rate_form = Product_Rate_Form(request.POST, instance=rate)
         if rate_form.is_valid():
             rate_form.save()
         return redirect('furn:home')
     else:
-        rate_form = Product_Rate_Form()
+        rate_form = Product_Rate_Form(instance=rate)
 
     context = {
         "rate": rate,
