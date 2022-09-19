@@ -13,7 +13,7 @@ User = get_user_model()
 def dashboard_home(request):
     users = User.objects.count()
     blogs = Blog.objects.count()
-    rate_avg = Product.objects.aggregate(Avg)
+    rate_avg = Product.objects.aggregate(Avg("rating"))
     support = Contact.objects.count()
     new_products = Arrival.objects.count()
     products = Product.objects.count() + new_products
@@ -25,9 +25,9 @@ def dashboard_home(request):
         "users": users,
         "support": support,
         "products":products,
-        "rate_avg": rate_avg,
         "contact_last": contact_last,
         "new_products": new_products,
+        "rate_avg_products": rate_avg,
         "contact_taklif": contact_taklif,
         "contact_support": contact_support,
     }
