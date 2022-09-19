@@ -15,13 +15,14 @@
                         <img src="{{ y.img.url }}" alt="feature image" style="width: 300px !important;height: 300px !important;border:1px solid black">
                         <div class="single-feature-txt text-center">
                             <p>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <span class="spacial-feature-icon"><i class="fa fa-star"></i></span>
+                                <i class="fa fa-star starts_main" id="1"></i>
+                                <i class="fa fa-star starts_main" id="2"></i>
+                                <i class="fa fa-star starts_main" id="3"></i>
+                                <i class="fa fa-star starts_main" id="4"></i>
+                                <i class="fa fa-star starts_main" id="5"></i>
                             </p>
                             <h3><a href="{% url 'furn:rate_product' y.pk %}">{{ y.title }}</a></h3>
+                            <h1 class="rate_text">{{ y.rating }}</h1>
                             <h5>${{ y.price }}</h5>
                         </div>
                     </div>
@@ -35,5 +36,32 @@
 
 </section>
 
-<script></script>
+
+
+<style>
+    .yellow{
+        color: yellow !important;
+    }
+    .gray{
+        color: gray !important;
+    }
+</style>
+
+<script>
+    let rate_num = document.querySelector('.rate_text')
+    let ratings = rate_num.parentNode.querySelectorAll('.starts_main')
+
+    ratings.forEach(function(star){
+
+        star.classList.add('gray')
+        for(let i=0;i<rate_num.textContent;i++){
+            ratings[i].classList.add('yellow')
+            ratings[i].classList.remove('gray')
+            rate_input.style.display = 'none'
+            secret_input.style.display = 'none'
+            rate_input.value = rate_num.textContent
+            secret_input.value = product_title.textContent
+        }
+    })
+</script>
 
