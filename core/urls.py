@@ -9,6 +9,7 @@ urlpatterns = [
     path("", include('furn.urls')),
     path("dashboard/", include('dashboard.urls'), name='dashboard'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 + i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include('translate.urls')),
