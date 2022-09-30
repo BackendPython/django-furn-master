@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.contrib.auth import get_user_model
-from furn.models import Contact, Product, Profile
+from furn.models import *
 from django import forms
 
 User = get_user_model()
@@ -30,7 +30,7 @@ class Product_Rate_Form(forms.ModelForm):
         model = Product
         fields = ['rating',]
         
-        
+
 
 
 
