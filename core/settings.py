@@ -144,6 +144,11 @@ LANGUAGES = [
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
