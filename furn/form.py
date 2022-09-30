@@ -30,4 +30,7 @@ class Product_Rate_Form(forms.ModelForm):
         model = Product
         fields = ['rating',]
         
+        
+
+
 
