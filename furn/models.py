@@ -66,8 +66,8 @@ class Blog(models.Model):
     aboute = models.TextField(max_length=700)
     title_url = models.URLField(max_length=500)
 
-    def __str__(self):
-        return self.date
+    # def __str__(self):
+    #     return self.date
 
 
 class Product(models.Model):
@@ -80,7 +80,7 @@ class Product(models.Model):
     title = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.secret
+        return self.rating
 
     email = models.EmailField()
 
