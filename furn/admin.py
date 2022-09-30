@@ -1,3 +1,4 @@
+from furn.translate import InfoTranslateOptions
 from django.contrib import admin
 from .models import *
 
@@ -10,3 +11,4 @@ admin.site.register(Subscribe)
 admin.site.register(Category)
 admin.site.register(Profile)
 admin.site.register(Contact)
+# admin.site.register(InfoTranslateOptions)

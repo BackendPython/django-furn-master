@@ -4,4 +4,5 @@ from .models import *
 @register(Product)
 
 class InfoTranslateOptions(TranslationOptions):
-    fields = ('name', 'title',)
+    model = Product
+    fields = ('title', )
