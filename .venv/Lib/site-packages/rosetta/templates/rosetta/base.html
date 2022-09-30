@@ -1,0 +1,37 @@
+<!DOCTYPE html>{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>{% block pagetitle %}Rosetta{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="{% static "admin/css/base.css" %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "admin/css/forms.css" %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "admin/css/changelists.css" %}" type="text/css"/>
+    <style type="text/css" media="screen">
+        {% include 'rosetta/css/rosetta.css' %}
+    </style>
+    {% block extra_styles %}{% endblock %}
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        {% include 'rosetta/js/rosetta.js' %}
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            {% block header %}
+            <div id="branding">
+                <h1 id="site-name"><a href="{% url 'rosetta-file-list' po_filter='project' %}">Rosetta</a> </h1>
+            </div>
+            {% endblock %}
+        </div>
+        <div class="breadcrumbs">{% block breadcumbs %}{% endblock %}</div>
+        <div id="content" class="flex">
+            {% block main %}{% endblock %}
+        </div>
+        <div id="footer" class="breadcumbs">
+            <a href="https://github.com/mbi/django-rosetta">Rosetta</a> <span class="version">{{version}}</span>
+        </div>
+    </div>
+</body>
+</html>

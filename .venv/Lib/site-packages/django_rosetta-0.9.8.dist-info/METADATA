@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: django-rosetta
+Version: 0.9.8
+Summary: A Django application that eases the translation of Django projects
+Home-page: https://github.com/mbi/django-rosetta
+Author: Marco Bonetti
+Author-email: mbonetti@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Localization
+Classifier: Topic :: Software Development :: Internationalization
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENSE
+Requires-Dist: Django (>=2.2)
+Requires-Dist: requests (>=2.1.0)
+Requires-Dist: polib (>=1.1.0)
+
+==============
+Django-Rosetta
+==============
+
+.. image:: https://github.com/mbi/django-rosetta/actions/workflows/test.yml/badge.svg
+  :target: https://github.com/mbi/django-rosetta/actions/workflows/test.yml
+
+.. image:: https://img.shields.io/pypi/v/django-rosetta
+  :target: https://pypi.org/project/django-rosetta/
+
+.. image:: https://img.shields.io/pypi/l/django-rosetta
+  :target: https://github.com/mbi/django-rosetta/blob/develop/LICENSE
+
+
+Rosetta is a `Django <http://www.djangoproject.com/>`_ application that facilitates the translation process of your Django projects.
+
+Because it doesn't export any models, Rosetta doesn't create any tables in your project's database. Rosetta can be installed and uninstalled by simply adding and removing a single entry in your project's `INSTALLED_APPS` and a single line in your main ``urls.py`` file.
+
+Note: as of version 0.9.0, django-rosetta requires Django 1.11 or later, as of version 0.9.6, django-rosetta requires Django 2.2 or later
+
+********
+Features
+********
+
+* Reads and writes your project's `gettext` catalogs (po and mo files)
+* Installed and uninstalled in under a minute
+* Uses Django's admin interface CSS
+
+.. image:: https://user-images.githubusercontent.com/131808/104168653-ac277e00-53fe-11eb-975e-8d46551fac59.png
+
+
+*************
+Documentation
+*************
+
+Please refer to the `online documentation <http://django-rosetta.readthedocs.org/>`_ to install Rosetta and get started.
+
+

@@ -1,0 +1,21 @@
+{% extends "admin/index.html" %}
+{% load rosetta i18n %}
+
+{% block sidebar %}
+{{block.super}}
+{% if request.user|can_translate  %}
+<div id="rosetta-content-main">
+    <div class="app-rosetta module">
+        <table>
+        <caption>
+            <a class="section" href="{% url 'rosetta-file-list' po_filter='project' %}">Rosetta</a>
+        </caption>
+            <tbody><tr>
+                <th scope="row"><a href="{% url 'rosetta-file-list' po_filter='project' %}">{% trans "Translations" %}</a></th>
+                <td colspan="2"><a href="{% url 'rosetta-file-list' po_filter='project' %}" class="changelink">{% trans "Change" %}</a></td>
+            </tr>
+        </tbody></table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
