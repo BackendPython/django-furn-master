@@ -129,24 +129,25 @@
                             <li class="logout-navbar"><a href="#">Logout</a></li>
                             {% endif %}
                             <li>
-                                <form action="{% url 'set_language' %}" method="post" class="language" style="width: 100px;">{% csrf_token %}
+                                <form action="{% url 'set_language' %}" method="post" class="language"
+                                    style="width: 100px;">{% csrf_token %}
                                     <input name="next" type="hidden" value="{{ redirect_to }}">
                                     <select name="language" onchange="change()" class="main_trans">
                                         {% get_current_language as LANGUAGE_CODE %}
                                         {% get_available_languages as LANGUAGES %}
                                         {% get_language_info_list for LANGUAGES as languages %}
                                         {% for language in languages %}
-                                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                                                {{ language.name_local }} ({{ language.code }})
-                                            </option>
+                                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
+                                            selected{% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
                                         {% endfor %}
                                     </select>
-                                    <button class="change-language" type="submit" style="display: none;"></button>
                                 </form>
                                 <!-- main translation -->
                                 <div class="translate_box">
-                                    <div class="uzb"></div>
-                                    <div class="eng"></div>
+                                    <div class="uz"></div>
+                                    <div class="en"></div>
                                 </div>
                             </li>
                         </ul>
@@ -170,44 +171,70 @@
 
 
 <style>
-    .none_trans{
+    .none_trans {
         display: none;
     }
-    .translate_box{
-        width: 150%;
+
+    .translate_box {
+        width: 100%;
         height: 30px;
         display: flex;
-        margin-top: 20px;
+        margin-top: 40px;
         align-items: center;
-        border-radius: 10px;
-        justify-content: space-around;
+        /* border-radius: 10px; */
         background-color: gray;
+        justify-content: space-around;
     }
-    .translate_box .eng, .translate_box .uzb{
+
+    .translate_box .en,
+    .translate_box .uz {
         width: 40%;
-        height: 100%;
+        height: 80%;
         cursor: pointer;
         border-radius: 10px;
         background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 3px 3px 3px black;
         background-image: url('/static/img/eng-flag.jpg');
     }
-    .translate_box .uzb{
+
+    .translate_box .uz {
         background-image: url('/static/img/uzb-flag.png');
     }
-    .click_trans{
-        background-color: black;
+
+    .click_trans {
+        box-shadow: none !important;
     }
 </style>
 
 <script>
     let form = document.querySelector('.language')
-    let btn = document.querySelector('.change-language')
-    let select_language = document.querySelector('.main_trans')
     let translate_box = document.querySelector('.translate_box')
-    let uzb_selected_button = select_language.querySelector('.uzb')
-    let eng_selected_button = select_language.querySelector('.eng')
-    let now_language = select_language.querySelectorAll('option')
-    
+    let select_language_parent = document.querySelector('.main_trans')
+    let select_languages = translate_box.querySelectorAll('div')
+    let now_language = select_language_parent.querySelectorAll('option').forEach(function (language) {
+         if (language.selected == true) {
+             select_languages.forEach(function (language_box) {
+                 if (language_box.classList[0] == language.value) {
+                    language_box.classList.add('click_trans')
+                } 
+                language_box.addEventListener('click', function(){
+                    if (language_box.classList[0]) {
+                        
+                    }
+                })
+            })
+        }
+    })
+    select_language_parent.classList.add('none_trans')
+
+
+
+
+
+
+
+
 
 </script>
