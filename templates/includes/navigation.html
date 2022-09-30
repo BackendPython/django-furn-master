@@ -131,7 +131,7 @@
                             <li>
                                 <form action="{% url 'set_language' %}" method="post" class="language" style="width: 100px;">{% csrf_token %}
                                     <input name="next" type="hidden" value="{{ redirect_to }}">
-                                    <select name="language" onchange="change()">
+                                    <select name="language" onchange="change()" class="main_trans">
                                         {% get_current_language as LANGUAGE_CODE %}
                                         {% get_available_languages as LANGUAGES %}
                                         {% get_language_info_list for LANGUAGES as languages %}
@@ -143,6 +143,11 @@
                                     </select>
                                     <button class="change-language" type="submit" style="display: none;"></button>
                                 </form>
+                                <!-- main translation -->
+                                <div class="translate_box">
+                                    <div class="uzb"></div>
+                                    <div class="eng"></div>
+                                </div>
                             </li>
                         </ul>
                         <!--/.nav -->
@@ -164,11 +169,45 @@
 
 
 
+<style>
+    .none_trans{
+        display: none;
+    }
+    .translate_box{
+        width: 150%;
+        height: 30px;
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: space-around;
+        background-color: gray;
+    }
+    .translate_box .eng, .translate_box .uzb{
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        border-radius: 10px;
+        background-size: contain;
+        background-position: center;
+        background-image: url('/static/img/eng-flag.jpg');
+    }
+    .translate_box .uzb{
+        background-image: url('/static/img/uzb-flag.png');
+    }
+    .click_trans{
+        background-color: black;
+    }
+</style>
 
 <script>
     let form = document.querySelector('.language')
     let btn = document.querySelector('.change-language')
-    function change(){
-        btn.click()
-    }
+    let select_language = document.querySelector('.main_trans')
+    let translate_box = document.querySelector('.translate_box')
+    let uzb_selected_button = select_language.querySelector('.uzb')
+    let eng_selected_button = select_language.querySelector('.eng')
+    let now_language = select_language.querySelectorAll('option')
+    
+
 </script>

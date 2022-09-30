@@ -8,3 +8,7 @@ class InfoTranslateOptions(TranslationOptions):
 @register(Product)
 class ProductTranslateOptions(TranslationOptions):
     fields = ('title',)
+    
+@register(Carousel)
+class ProductTranslateOptions(TranslationOptions):
+    fields = ('title',)
