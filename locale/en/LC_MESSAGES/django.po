@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-30 15:23+0500\n"
-"PO-Revision-Date: 2022-09-30 15:43+0000\n"
+"POT-Creation-Date: 2022-09-30 15:58+0500\n"
+"PO-Revision-Date: 2022-09-30 16:00+0000\n"
 "Last-Translator: Sodiqov Sodiqov <sodiqov@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,10 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\core\settings.py:140
+#: .\core\settings.py:141
 msgid "Uzbek"
 msgstr ""
 
-#: .\core\settings.py:141
+#: .\core\settings.py:142
 msgid "English"
 msgstr ""
+
+#: .\templates\includes\navigation.html:117
+msgid "uy"
+msgstr "home"
