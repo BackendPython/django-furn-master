@@ -67,7 +67,7 @@ class Blog(models.Model):
     title_url = models.URLField(max_length=500)
 
     def __str__(self):
-        return self.title
+        return self.date
 
 
 class Product(models.Model):
