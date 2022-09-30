@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, reverse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.db.models import Avg
 from django.views import generic
 from django.db.models import Q
-from django.db.models import Avg
 from furn.models import *
 from furn.form import *
 
