@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import environ
 
@@ -134,6 +135,14 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+LANGUAGES = [
+    ('uz', _('Uzbek')),
+    ('en', _('English')),
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
