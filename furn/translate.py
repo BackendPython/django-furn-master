@@ -5,3 +5,7 @@ from .models import *
 
 class InfoTranslateOptions(TranslationOptions):
     fields = ('title', 'aboute',)
+
+@register(Product)
+class ProductTranslateOptions(TranslationOptions):
+    fields = ('title',)
