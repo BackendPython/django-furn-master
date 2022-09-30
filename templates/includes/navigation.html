@@ -124,6 +124,10 @@
                             {% if request.user.is_organiser %}
                             <li class=""><a href="/dashboard/">dashboard</a></li>
                             {% endif %}
+                            {% if request.user.is_authenticated %}
+                            <li class="profile-navbar"><a href="{% url 'furn:profile' %}">Profile</a></li>
+                            <li class="logout-navbar"><a href="#">Logout</a></li>
+                            {% endif %}
                             <li>
                                 <form action="{% url 'set_language' %}" method="post" class="language" style="width: 100px;">{% csrf_token %}
                                     <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -140,10 +144,6 @@
                                     <button class="change-language" type="submit" style="display: none;"></button>
                                 </form>
                             </li>
-                            {% if request.user.is_authenticated %}
-                            <li class="profile-navbar"><a href="{% url 'furn:profile' %}">Profile</a></li>
-                            <li class="logout-navbar"><a href="#">Logout</a></li>
-                            {% endif %}
                         </ul>
                         <h1>{% trans 'Salom' %}</h1>
                         <h1>{% trans 'ism' %}</h1>
