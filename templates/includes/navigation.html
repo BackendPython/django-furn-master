@@ -209,25 +209,40 @@
 </style>
 
 <script>
+    let default_language = false
     let form = document.querySelector('.language')
     let translate_box = document.querySelector('.translate_box')
     let select_language_parent = document.querySelector('.main_trans')
     let select_languages = translate_box.querySelectorAll('div')
+    let window_href = '{% url 'furn:home' %}'
     let now_language = select_language_parent.querySelectorAll('option').forEach(function (language) {
          if (language.selected == true) {
              select_languages.forEach(function (language_box) {
-                 if (language_box.classList[0] == language.value) {
+                if (window_href=='/') {
+                    select_language_parent.querySelectorAll('option').forEach(function(new_language){
+                        new_language.selected = false
+                        if (new_language.value=='en') {
+                            new_language.selected = true
+                            form.submit()
+                        }
+                    })
+                }
+                else if(language_box.classList[0] == language.value) {
                     language_box.classList.add('click_trans')
-                } 
+                }
                 language_box.addEventListener('click', function(){
-                    if (language_box.classList[0]) {
-                        
-                    }
+                    select_language_parent.querySelectorAll('option').forEach(function(languages_option){
+                        languages_option.selected = false
+                        if (languages_option.value==language_box.classList[0]) {
+                            languages_option.selected = translate_box
+                        }
+                        form.submit()
+                    })
                 })
             })
         }
     })
-    select_language_parent.classList.add('none_trans')
+    // select_language_parent.classList.add('none_trans')
 
 
 
