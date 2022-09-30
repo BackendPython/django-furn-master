@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 <!--welcome-hero start -->
 <header id="home" class="welcome-hero">
 
@@ -116,6 +116,22 @@
                         <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="active"><a href="{% url 'furn:home' %}">home</a></li>
                             <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post" class="language">{% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <select name="language" onchange="change()">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                                {{ language.name_local }} ({{ language.code }})
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <button class="change-language" type="submit" style="display: none;"></button>
+                                </form>
+                            </li>
                             <li><a href="#contactus">contact</a></li>
                             {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'furn:signup' %}">Register</a></li>
@@ -129,6 +145,8 @@
                             <li class="logout-navbar"><a href="#">Logout</a></li>
                             {% endif %}
                         </ul>
+                        <h1>{% trans 'Salom' %}</h1>
+                        <h1>{% trans 'ism' %}</h1>
                         <!--/.nav -->
                     </div><!-- /.navbar-collapse -->
                 </div>
@@ -145,3 +163,14 @@
 </header>
 <!--/.welcome-hero-->
 <!--welcome-hero end -->
+
+
+
+
+<script>
+    let form = document.querySelector('.language')
+    let btn = document.querySelector('.change-language')
+    function change(){
+        btn.click()
+    }
+</script>
