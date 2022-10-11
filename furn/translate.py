@@ -11,4 +11,4 @@ class ProductTranslateOptions(TranslationOptions):
     
 @register(Carousel)
 class ProductTranslateOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ('title', 'aboute')
