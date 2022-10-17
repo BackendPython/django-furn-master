@@ -10,7 +10,7 @@ class CarouselApi(serializers.ModelSerializer):
 class ArrivalApi(serializers.ModelSerializer):
     class Meta:
         model = Arrival
-        fields = ['arrivals_title', 'arrivals_price', 'arrivals_text', '']
+        fields = ['arrivals_title', 'arrivals_price', 'arrivals_text', 'category', 'arrvals_size']
 
 class BlogApi(serializers.ModelSerializer):
     class Meta:
