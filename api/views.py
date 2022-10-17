@@ -153,6 +153,7 @@ def product_single_delete(request, pk):
     return Response("Succesful deleted")
 
 # ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
+
 # ---------------------------------------------------------------- Blog REST API ----------------------------------------------------------------
 
 # get blog
@@ -204,6 +205,61 @@ def blog_single_edit(request, pk):
 def blog_single_delete(request, pk):
     blog = Blog.objects.get(id=pk)
     blog.delete()
+    return Response("Succesful deleted")
+
+# ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
+
+# ---------------------------------------------------------------- Blog REST API ----------------------------------------------------------------
+
+# get contact
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def contact(request):
+    contact = Contact.objects.all()
+    serializer = ContactApi(contact, many=True)
+    return Response(serializer.data)
+
+# contact filter rating 5
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def contact_filter_rating(request):
+    contact = Contact.objects.filter(rating='5')
+    serializer =ContactApi(contact, many=True)
+    return Response(serializer.data)
+
+# contact add
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def contact_add(request):
+    serializer = ContactApi(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# contact search with id
+@api_view(["GET"])
+@permission_classes((permissions.AllowAny, ))
+def contact_single(request, pk):
+    contact = Contact.objects.get(id=pk)
+    serializer = ContactApi(contact, many=False)
+    return Response(serializer.data)
+
+# contact edit with api
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def contact_single_edit(request, pk):
+    contact = Contact.objects.get(id=pk)
+    serializer = ContactApi(instance=contact, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# contact delete with id
+@api_view(['DELETE'])
+@permission_classes((permissions.AllowAny,))
+def contact_single_delete(request, pk):
+    contact = Contact.objects.get(id=pk)
+    contact.delete()
     return Response("Succesful deleted")
 
 # ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
