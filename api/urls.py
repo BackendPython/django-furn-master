@@ -21,4 +21,10 @@ urlpatterns = [
     path('product-<int:pk>', product_single, name='product_single'),
     path('product-edit/<int:pk>', product_single_edit, name='product_single_edit'),
     path('product-delete/<int:pk>', product_single_delete, name='product_single_delete'),
+    
+    path('blog', blog, name='blog'),
+    path('blog-add', blog_add, name='blog_add'),
+    path('blog-<int:pk>', blog_single, name='blog_single'),
+    path('blog-edit/<int:pk>', blog_single_edit, name='blog_single_edit'),
+    path('blog-delete/<int:pk>', blog_single_delete, name='blog_single_delete'),
 ]

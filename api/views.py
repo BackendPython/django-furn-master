@@ -153,3 +153,57 @@ def product_single_delete(request, pk):
     return Response("Succesful deleted")
 
 # ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
+# ---------------------------------------------------------------- Blog REST API ----------------------------------------------------------------
+
+# get blog
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def blog(request):
+    blog = Blog.objects.all()
+    serializer = BlogApi(blog, many=True)
+    return Response(serializer.data)
+
+# blog filter rating 5
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def blog_filter_rating(request):
+    blog = Blog.objects.filter(rating='5')
+    serializer = BlogApi(blog, many=True)
+    return Response(serializer.data)
+
+# blog add
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def blog_add(request):
+    serializer = BlogApi(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# blog search with id
+@api_view(["GET"])
+@permission_classes((permissions.AllowAny, ))
+def blog_single(request, pk):
+    blog = Blog.objects.get(id=pk)
+    serializer = BlogApi(blog, many=False)
+    return Response(serializer.data)
+
+# blog edit with api
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def blog_single_edit(request, pk):
+    blog = Product.objects.get(id=pk)
+    serializer = BlogApi(instance=blog, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# blog delete with id
+@api_view(['DELETE'])
+@permission_classes((permissions.AllowAny,))
+def blog_single_delete(request, pk):
+    blog = Blog.objects.get(id=pk)
+    blog.delete()
+    return Response("Succesful deleted")
+
+# ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
