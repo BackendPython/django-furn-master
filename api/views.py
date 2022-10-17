@@ -99,21 +99,20 @@ def arrival_single_delete(request, pk):
 
 # ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
 
-# ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
+# ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
 
 # get product
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
-def home(request):
+def product(request):
     product = Product.objects.all()
     serializer = ProductApi(product, many=True)
     return Response(serializer.data)
 
-
 # product filter rating 5
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
-def filter_adidas(request):
+def product_filter_rating(request):
     product = Product.objects.filter(rating='5')
     serializer = ProductApi(product, many=True)
     return Response(serializer.data)
@@ -121,7 +120,7 @@ def filter_adidas(request):
 # product add
 @api_view(['POST'])
 @permission_classes((permissions.AllowAny,))
-def postPaste(request):
+def product_add(request):
     serializer = ProductApi(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -130,7 +129,7 @@ def postPaste(request):
 # product search with id
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny, ))
-def singleapi(request, pk):
+def product_single(request, pk):
     krasovka = Product.objects.get(id=pk)
     serializer = ProductApi(krasovka, many=False)
     return Response(serializer.data)
@@ -138,7 +137,7 @@ def singleapi(request, pk):
 # product edit with api
 @api_view(['POST'])
 @permission_classes((permissions.AllowAny,))
-def postEdit(request, pk):
+def product_single_edit(request, pk):
     krasovka = Product.objects.get(id=pk)
     serializer = ProductApi(instance=krasovka, data=request.data)
     if serializer.is_valid():
@@ -148,9 +147,9 @@ def postEdit(request, pk):
 # product delete with id
 @api_view(['DELETE'])
 @permission_classes((permissions.AllowAny,))
-def postDelete(request, pk):
+def product_single_delete(request, pk):
     krasovka = Product.objects.get(id=pk)
     krasovka.delete()
     return Response("Succesful deleted")
 
-# ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
+# ---------------------------------------------------------------- Product REST API ----------------------------------------------------------------
