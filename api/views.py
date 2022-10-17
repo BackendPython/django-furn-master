@@ -99,3 +99,58 @@ def arrival_single_delete(request, pk):
 
 # ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
 
+# ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
+
+# get product
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def home(request):
+    product = Product.objects.all()
+    serializer = ProductApi(product, many=True)
+    return Response(serializer.data)
+
+
+# product filter rating 5
+@api_view(['GET'])
+@permission_classes((permissions.AllowAny,))
+def filter_adidas(request):
+    product = Product.objects.filter(rating='5')
+    serializer = ProductApi(product, many=True)
+    return Response(serializer.data)
+
+# product add
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def postPaste(request):
+    serializer = ProductApi(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# product search with id
+@api_view(["GET"])
+@permission_classes((permissions.AllowAny, ))
+def singleapi(request, pk):
+    krasovka = Product.objects.get(id=pk)
+    serializer = ProductApi(krasovka, many=False)
+    return Response(serializer.data)
+
+# product edit with api
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def postEdit(request, pk):
+    krasovka = Product.objects.get(id=pk)
+    serializer = ProductApi(instance=krasovka, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+# product delete with id
+@api_view(['DELETE'])
+@permission_classes((permissions.AllowAny,))
+def postDelete(request, pk):
+    krasovka = Product.objects.get(id=pk)
+    krasovka.delete()
+    return Response("Succesful deleted")
+
+# ---------------------------------------------------------------- Arrival REST API ----------------------------------------------------------------
