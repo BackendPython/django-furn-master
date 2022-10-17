@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     'rosetta',
     'widget_tweaks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
