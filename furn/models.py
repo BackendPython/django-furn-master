@@ -63,7 +63,6 @@ class Blog(models.Model):
     date = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     aboute = models.TextField(max_length=700)
-    title_url = models.URLField(max_length=500)
 
     def __str__(self):
         return self.date
