@@ -47,7 +47,6 @@ class Carousel(models.Model):
 class Arrival(models.Model):
     arrivals_img = models.ImageField()
     arrivals_title = models.CharField(max_length=200)
-    arrivals_url = models.URLField(max_length=500)
     arrivals_price = models.IntegerField(default=10)
     category = models.ForeignKey("Category", blank=True, on_delete=models.CASCADE)
     
