@@ -69,7 +69,6 @@ class Blog(models.Model):
     def __str__(self):
         return self.date
 
-
 class Product(models.Model):
     
     rating = models.CharField(max_length=10, default='2')
