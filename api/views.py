@@ -24,7 +24,7 @@ def carousel_add(request):
 # search carousel with id
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny, ))
-def singleapi(request, pk):
+def carousel_single(request, pk):
     carousel = Carousel.objects.get(id=pk)
     serializer = CarouselApi(carousel, many=False)
     return Response(serializer.data)
