@@ -18,6 +18,7 @@ urlpatterns = [
     
     path('product', product, name='product'),
     path('product-add', product_add, name='product_add'),
+    path('product-filter', product_filter_rating, name='product_filter_5'),
     path('product-<int:pk>', product_single, name='product_single'),
     path('product-edit/<int:pk>', product_single_edit, name='product_single_edit'),
     path('product-delete/<int:pk>', product_single_delete, name='product_single_delete'),

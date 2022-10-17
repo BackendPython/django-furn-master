@@ -100,3 +100,6 @@ def rate_fun(request, pk):
         "rate_form": rate_form,
     }
     return render(request, 'pages/rate.html', context)
+
+def chat(request):
+    return render(request, 'api/chat.html')

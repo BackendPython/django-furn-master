@@ -6,6 +6,7 @@ app_name = 'furn'
 
 urlpatterns = [
     path('', home, name="home"),
+    path('chat/', chat, name="chat"),
     path('signup/', signup, name='signup'),
     path('profile', profile, name='profile'),
     path('login/', LoginView.as_view(), name='login'),
