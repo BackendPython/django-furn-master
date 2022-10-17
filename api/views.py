@@ -4,7 +4,8 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 
-# main API
+
+# get carusel
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
 def carousel(request):
@@ -27,6 +28,16 @@ def carousel_add(request):
 def carousel_single(request, pk):
     carousel = Carousel.objects.get(id=pk)
     serializer = CarouselApi(carousel, many=False)
+    return Response(serializer.data)
+
+# edit carousel
+@api_view(['POST'])
+@permission_classes((permissions.AllowAny,))
+def carousel_single_edit(request, pk):
+    carousel = Carousel.objects.get(id=pk)
+    serializer = CarouselApi(instance=carousel, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
     return Response(serializer.data)
 
 
