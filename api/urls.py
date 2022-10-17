@@ -7,5 +7,7 @@ urlpatterns = [
     path('carousel', carousel, name='carousel'),
     path('carousel-add', carousel_add, name='carousel_add'),
     path('carousel-<int:pk>', carousel_single, name='carousel_single'),
-    path('carousel-edit/<int:pk>', carousel_single_edit, name='carousel_single'),
+    path('carousel-edit/<int:pk>', carousel_single_edit, name='carousel_single_edit'),
+    path('carousel-delete/<int:pk>', carousel_single_delete, name='carousel_single_delete'),
+    
 ]

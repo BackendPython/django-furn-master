@@ -40,4 +40,10 @@ def carousel_single_edit(request, pk):
         serializer.save()
     return Response(serializer.data)
 
-
+# delete carousel
+@api_view(['DELETE'])
+@permission_classes((permissions.AllowAny,))
+def carousel_single_delete(request, pk):
+    krasovka = Carousel.objects.get(id=pk)
+    krasovka.delete()
+    return Response("Successfull deleted")
