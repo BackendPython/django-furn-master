@@ -15,4 +15,10 @@ urlpatterns = [
     path('arrival-<int:pk>', arrival_single, name='arrival_single'),
     path('arrival-edit/<int:pk>', arrival_single_edit, name='arrival_single_edit'),
     path('arrival-delete/<int:pk>', arrival_single_delete, name='arrival_single_delete'),
+    
+    path('product', product, name='product'),
+    path('product-add', product_add, name='product_add'),
+    path('product-<int:pk>', product_single, name='product_single'),
+    path('product-edit/<int:pk>', product_single_edit, name='product_single_edit'),
+    path('product-delete/<int:pk>', product_single_delete, name='product_single_delete'),
 ]

@@ -20,7 +20,7 @@ class BlogApi(serializers.ModelSerializer):
 class ProductApi(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['rating', 'price', 'title']
+        fields = ['rating', 'price', 'title', 'secret', 'email']
         
 class ContactApi(serializers.ModelSerializer):
     class Meta:
