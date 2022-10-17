@@ -4,5 +4,5 @@ from api.views import *
 app_name = 'api'
 
 urlpatterns = [
-    path('', home, name='home')
+    path('', home_api, name='home')
 ]

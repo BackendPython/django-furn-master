@@ -8,7 +8,7 @@ from rest_framework.decorators import api_view, permission_classes
 # main API
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
-def home(request):
+def home_api(request):
     product = Product.objects.all()
     serializer = ProductApi(product, many=True)
     return Response(serializer.data)
