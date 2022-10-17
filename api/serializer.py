@@ -17,7 +17,7 @@ class BlogApi(serializers.ModelSerializer):
         model = Blog
         fields = ['title', 'aboute']
 
-class ProoductApi(serializers.ModelSerializer):
+class ProductApi(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['rating', 'price', 'title']
