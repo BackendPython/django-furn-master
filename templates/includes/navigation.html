@@ -218,15 +218,18 @@
     let now_language = select_language_parent.querySelectorAll('option').forEach(function (language) {
          if (language.selected == true) {
              select_languages.forEach(function (language_box) {
-                if (window_href=='/') {
-                    select_language_parent.querySelectorAll('option').forEach(function(new_language){
-                        new_language.selected = false
-                        if (new_language.value=='en') {
-                            new_language.selected = true
-                            form.submit()
-                        }
-                    })
-                }
+
+                // off default language
+                // if (window_href=='/') {
+                //     select_language_parent.querySelectorAll('option').forEach(function(new_language){
+                //         new_language.selected = false
+                //         if (new_language.value=='en') {
+                //             new_language.selected = true
+                //             form.submit()
+                //         }
+                //     })
+                // }
+
                 else if(language_box.classList[0] == language.value) {
                     language_box.classList.add('click_trans')
                 }
@@ -243,13 +246,5 @@
         }
     })
     select_language_parent.classList.add('none_trans')
-
-
-
-
-
-
-
-
 
 </script>
